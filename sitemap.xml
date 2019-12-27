@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.turuwei.com/uploads/index.html</loc>
+    <loc>http://www.turuwei.com/categories/index.html</loc>
     
-    <lastmod>2019-12-27T05:18:35.494Z</lastmod>
+    <lastmod>2019-12-27T05:43:02.178Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.turuwei.com/tags/index.html</loc>
     
-    <lastmod>2019-12-27T04:43:39.797Z</lastmod>
+    <lastmod>2019-12-27T05:42:38.431Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/uploads/index.html</loc>
+    
+    <lastmod>2019-12-27T05:18:35.494Z</lastmod>
     
   </url>
   
@@ -33,13 +40,6 @@
     <loc>http://www.turuwei.com/title/index.html</loc>
     
     <lastmod>2019-12-27T04:20:00.481Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.turuwei.com/categories/index.html</loc>
-    
-    <lastmod>2019-12-27T04:19:30.270Z</lastmod>
     
   </url>
   
