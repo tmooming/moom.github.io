@@ -3,9 +3,7 @@
   <entry>
     <title>python中yield用法解析</title>
     <url>/p/10001.html</url>
-    <content><![CDATA[<p>之前有看过yield的用法，不过很快就忘掉了，所以再记录一遍。</p>
-<p>我们可以把yield看做“return”，这个是直观的：它首先是个return，return的功能是什么？就是在程序中返回某个值，返回之后程序就不再往下运行了。看做return之后再把它看做一个是生成器（generator）的一部分（带yield的函数才是真正的迭代器）</p>
-<p><strong>直接上例子：</strong></p>
+    <content><![CDATA[<p><strong>直接上例子：</strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"程序开始"</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        print(<span class="string">"进入循环"</span>)</span><br><span class="line">        res = <span class="keyword">yield</span> <span class="number">5</span></span><br><span class="line">        print(<span class="string">"res:"</span>,res)</span><br><span class="line">        print(<span class="string">"单次循环结束"</span>)</span><br><span class="line">    print(<span class="string">"循环结束"</span>)</span><br><span class="line">g = test()</span><br><span class="line">print(next(g))</span><br><span class="line">print(<span class="string">"*"</span>*<span class="number">10</span>)</span><br><span class="line">print(next(g))</span><br><span class="line">print(<span class="string">"*"</span>*<span class="number">20</span>)</span><br><span class="line">print(g.send(<span class="number">7</span>))</span><br></pre></td></tr></table></figure>
 
 <p><strong>简单的几行代码就让你明白什么是yield，代码的输出这个：</strong></p>
@@ -29,8 +27,7 @@
 </li>
 </ol>
 <p>通过上面这个例子，再结合yield的概念，就能知道yield到底有什么作用了：</p>
-<p>到这里你可能就明白yield和return的关系和区别了，带yield的函数是一个生成器，而不是一个函数了，这个生成器有一个函数就是next函数，next就相当于“下一步”生成哪个数，这一次的next开始的地方是接着上一次的next停止的地方执行的，所以调用next的时候，生成器并不会从test函数的开始执行，只是接着上一步停止的地方开始，然后遇到yield后，return出要生成的数，此步就结束。</p>
-]]></content>
+<p>到这里你可能就明白yield和return的关系和区别了，带yield的函数是一个生成器，而不是一个函数了，这个生成器有一个函数就是next函数，next就相当于“下一步”生成哪个数，这一次的next开始的地方是接着上一次的next停止的地方执行的，所以调用next的时候，生成器并不会从test函数的开始执行，只是接着上一步停止的地方开始，然后遇到yield后，return出要生成的数，此步就结束。</p>]]></content>
       <categories>
         <category>Python</category>
       </categories>
