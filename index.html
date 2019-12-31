@@ -336,6 +336,205 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://www.turuwei.com/p/10001.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="tmooming">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TuRuwei's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/p/10001.html" itemprop="url">python中yield用法解析</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-31T11:32:59+08:00">
+                2019-12-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计</span>
+                
+                <span title="字数统计">
+                  811 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>之前有看过yield的用法，不过很快就忘掉了，所以再记录一遍。</p>
+<p>我们可以把yield看做“return”，这个是直观的：它首先是个return，return的功能是什么？就是在程序中返回某个值，返回之后程序就不再往下运行了。看做return之后再把它看做一个是生成器（generator）的一部分（带yield的函数才是真正的迭代器）</p>
+<p><strong>直接上例子：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"程序开始"</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        print(<span class="string">"进入循环"</span>)</span><br><span class="line">        res = <span class="keyword">yield</span> <span class="number">5</span></span><br><span class="line">        print(<span class="string">"res:"</span>,res)</span><br><span class="line">        print(<span class="string">"单次循环结束"</span>)</span><br><span class="line">    print(<span class="string">"循环结束"</span>)</span><br><span class="line">g = test()</span><br><span class="line">print(next(g))</span><br><span class="line">print(<span class="string">"*"</span>*<span class="number">10</span>)</span><br><span class="line">print(next(g))</span><br><span class="line">print(<span class="string">"*"</span>*<span class="number">20</span>)</span><br><span class="line">print(g.send(<span class="number">7</span>))</span><br></pre></td></tr></table></figure>
+
+<p><strong>简单的几行代码就让你明白什么是yield，代码的输出这个：</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">程序开始</span><br><span class="line">进入循环</span><br><span class="line"><span class="number">5</span></span><br><span class="line">**********</span><br><span class="line">res: <span class="literal">None</span></span><br><span class="line">单次循环结束</span><br><span class="line">进入循环</span><br><span class="line"><span class="number">5</span></span><br><span class="line">********************</span><br><span class="line">res: <span class="number">7</span></span><br><span class="line">单次循环结束</span><br><span class="line">进入循环</span><br><span class="line"><span class="number">5</span></span><br></pre></td></tr></table></figure>
+
+<p>接下来逐步解释测试程序的执行：</p>
+<ol>
+<li><p>程序开始执行以后，因为test函数中有yield关键字，所以test函数并不会真的执行，而是先得到一个生成器g(相当于一个对象)</p>
+</li>
+<li><p>直到调用next方法，test函数正式开始执行，先执行test函数中的print方法，然后进入while循环</p>
+</li>
+<li><p>程序遇到yield关键字，然后把yield想想成return,return了一个5之后，程序停止，并没有执行赋值给res操作，此时next(g)语句执行完成，所以输出的前三行（第一个是while上面的print的结果，第二个是while里面的print的结果，第三个是return出的结果）是执行print(next(g))的结果，</p>
+</li>
+<li><p>程序执行print(“*”*10)，输出10个*</p>
+</li>
+<li><p>又开始执行下面的print(next(g)),这个时候和上面那个差不多，不过不同的是，这个时候是从刚才那个next程序停止的地方开始执行的，也就是要执行res的赋值操作，这时候要注意，这个时候赋值操作的右边是没有值的（因为刚才那个是return出去了，并没有给赋值操作的左边传参数），所以这个时候res赋值是None,所以接着下面的输出就是res:None,</p>
+</li>
+<li><p>程序会继续在while里执行，又一次碰到yield,这个时候同样return 出5，然后程序停止，print函数输出的5就是这次return出的5.</p>
+</li>
+<li><p>最后再重复一次，这一次我们调用了send()函数，可以理解为给迭代器g 传递了一个参数，所以能输出res：7。</p>
+</li>
+</ol>
+<p>通过上面这个例子，再结合yield的概念，就能知道yield到底有什么作用了：</p>
+<p>到这里你可能就明白yield和return的关系和区别了，带yield的函数是一个生成器，而不是一个函数了，这个生成器有一个函数就是next函数，next就相当于“下一步”生成哪个数，这一次的next开始的地方是接着上一次的next停止的地方执行的，所以调用next的时候，生成器并不会从test函数的开始执行，只是接着上一步停止的地方开始，然后遇到yield后，return出要生成的数，此步就结束。</p>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://www.turuwei.com/p/10000.html">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -550,7 +749,7 @@
               
                 <a href="/archives/%7C%7C%20archive">
               
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -561,7 +760,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -572,7 +771,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -669,7 +868,7 @@
   
   <!-- 添加博客全站总字数统计-->
   <i class="fa fa-pencil"></i>
-  <span class="post-count">博客全站共 58 字</span>
+  <span class="post-count">博客全站共 869 字</span>
 </div>
   
 
@@ -687,7 +886,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">58</span>
+    <span title="Site words total count">869</span>
   
 </div>
 
