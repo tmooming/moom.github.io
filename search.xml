@@ -3,8 +3,7 @@
   <entry>
     <title>Jupyter Lab 简单配置</title>
     <url>/p/10002.html</url>
-    <content><![CDATA[<h3 id="Jupyter-Lab-简介"><a href="#Jupyter-Lab-简介" class="headerlink" title="Jupyter Lab 简介"></a>Jupyter Lab 简介</h3><p>Jupyter Lab 是一个交互式的开发环境，是 Jupyter notebook 的下一代产品，集成了更多的功能。也就是说，Jupyter Lab是Jupyter notebook的加强版，用他就对了。</p>
-<p>使用 JupyterLab，你可以：</p>
+    <content><![CDATA[<p>使用 JupyterLab，你可以：</p>
 <ul>
 <li>可以开启终端，用于交互式运行代码，完全支持丰富的输出</li>
 <li>完美支持 Markdown，Python，R，Julia，LaTeX等任何文本文件</li>
@@ -31,8 +30,7 @@
 <p><img src="C:%5CUsers%5Ctmoom%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200103095824994.png" alt="image-20200103095824994"></p>
 <p>现在，看向界面左侧应该就可以看到一个插件管理的图标，点击就可以看到刚才安装的插件</p>
 <p><img src="C:%5CUsers%5Ctmoom%5CAppData%5CRoaming%5CTypora%5Ctypora-user-images%5Cimage-20200103100019244.png" alt="image-20200103100019244"></p>
-<p>这个插件还有查询功能，我们可以很方便的安装卸载插件，上面是已安装的插件，下面是可以安装的插件，安装完成后可以直接更新。</p>
-]]></content>
+<p>这个插件还有查询功能，我们可以很方便的安装卸载插件，上面是已安装的插件，下面是可以安装的插件，安装完成后可以直接更新。</p>]]></content>
       <categories>
         <category>Python</category>
       </categories>
