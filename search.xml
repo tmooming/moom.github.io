@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>BECOME IMMORTAL求解思路</title>
+    <url>/p/10003.html</url>
+    <content><![CDATA[<p><strong>题目如下：</strong></p>
+<blockquote>
+<p><a href="https://www.codewars.com/kata/become-immortal/" target="_blank" rel="noopener"><strong>BECOME IMMORTAL</strong></a></p>
+<blockquote>
+<p>Instructions</p>
+<p>In the nation of CodeWars, there lives an Elder who has lived for a long time. Some people call him the Grandpatriarch, but most people just refer to him as the Elder.</p>
+<p>There is a secret to his longetivity: he has a lot of <code>young</code> worshippers, who regularly perform a ritual to ensure that the Elder stays immortal:</p>
+<ul>
+<li><p>The worshippers lines up in a magic rectangle, of dimensions <code>m</code> and <code>n</code>.</p>
+</li>
+<li><p>They channel their will to wish for the Elder. In this magic rectangle, any worshipper can donate time equal to the <code>xor</code> of the column and the row (zero-indexed) he’s on, in seconds, to the Elder.</p>
+</li>
+<li><p>However, not every ritual goes perfectly. The donation of time from the worshippers to the Elder will experience a transmission loss <code>l</code> (in seconds). Also, if a specific worshipper cannot channel more than <code>l</code> seconds, the Elder will not be able to receive this worshipper’s donation.</p>
+</li>
+</ul>
+<p>The estimated age of the Elder is so old it’s probably bigger than the total number of atoms in the universe. However, the lazy programmers (who <code>made a big news</code> by inventing <a href="https://en.wikipedia.org/wiki/Time_formatting_and_storage_bugs" target="_blank" rel="noopener">the Y2K bug and other related things</a>) apparently didn’t think thoroughly enough about this, and so their <code>simple</code> date-time system can only record time from 0 to <code>t-1</code> seconds. If the elder received the total amount of time (in seconds) more than the system can store, it will be wrapped around so that the time would be between the range 0 to <code>t-1</code>.</p>
+<p>Given <code>m</code>, <code>n</code>, <code>l</code> and <code>t</code>, please find the number of seconds the Elder has received, represented in the poor programmer’s date-time system.</p>
+<p>(Note: <code>t</code> will never be bigger than <code>2^32 - 1</code>, and in JS, <code>2^26 - 1</code>.)</p>
+</blockquote>
+</blockquote>
+<p>我的解法：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">elder_age</span><span class="params">(m,n,l,t)</span>:</span></span><br><span class="line">    matirc = (max((j^i)-l,<span class="number">0</span>) <span class="keyword">for</span> j <span class="keyword">in</span> range(m) <span class="keyword">for</span> i <span class="keyword">in</span> range(n))</span><br><span class="line">    <span class="keyword">return</span> sum(matirc)%t</span><br></pre></td></tr></table></figure>
+
+<p>正确结果很容易求出来，这道题目的难点在于对程序的优化，刚开始想用列表生成式，发现运行时间太长了，就改成了generator，不过现在还是超时。暂时没有想到好的办法。</p>]]></content>
+      <categories>
+        <category>Python</category>
+      </categories>
+      <tags>
+        <tag>算法</tag>
+        <tag>刷题</tag>
+        <tag>codewars</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Jupyter Lab 简单配置</title>
     <url>/p/10002.html</url>
     <content><![CDATA[<p>使用 JupyterLab，你可以：</p>
