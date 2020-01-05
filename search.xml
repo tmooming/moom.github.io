@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>【NLP】自然语言处理 完整流程</title>
-    <url>/p/10004.html</url>
+    <url>/p/10004/</url>
     <content><![CDATA[<h3 id="1-已有语料"><a href="#1-已有语料" class="headerlink" title="1. 已有语料"></a>1. 已有语料</h3><p>纸质或者电子文本资料—&gt;电子化—&gt;语料库。</p>
 <h3 id="2-网上下载、抓取语料"><a href="#2-网上下载、抓取语料" class="headerlink" title="2. 网上下载、抓取语料"></a>2. 网上下载、抓取语料</h3><p>国内外标准开放数据集（比如国内的中文汉语有搜狗语料、人民日报语料） 或 通过爬虫。</p>
 <h2 id="第二步：语料预处理"><a href="#第二步：语料预处理" class="headerlink" title="第二步：语料预处理"></a>第二步：语料预处理</h2><p>语料预处理大概会占到整个50%-70%的工作量。</p>
@@ -84,7 +84,7 @@
   </entry>
   <entry>
     <title>BECOME IMMORTAL求解思路</title>
-    <url>/p/10003.html</url>
+    <url>/p/10003/</url>
     <content><![CDATA[<p><strong>题目如下：</strong></p>
 <blockquote>
 <p><a href="https://www.codewars.com/kata/become-immortal/" target="_blank" rel="noopener"><strong>BECOME IMMORTAL</strong></a></p>
@@ -120,7 +120,7 @@
   </entry>
   <entry>
     <title>Jupyter Lab 简单配置</title>
-    <url>/p/10002.html</url>
+    <url>/p/10002/</url>
     <content><![CDATA[<p>使用 JupyterLab，你可以：</p>
 <ul>
 <li>可以开启终端，用于交互式运行代码，完全支持丰富的输出</li>
@@ -156,7 +156,7 @@
   </entry>
   <entry>
     <title>python中yield用法解析</title>
-    <url>/p/10001.html</url>
+    <url>/p/10001/</url>
     <content><![CDATA[<p><strong>直接上例子：</strong></p>
 <figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span><span class="params">()</span>:</span></span><br><span class="line">    print(<span class="string">"程序开始"</span>)</span><br><span class="line">    <span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">        print(<span class="string">"进入循环"</span>)</span><br><span class="line">        res = <span class="keyword">yield</span> <span class="number">5</span></span><br><span class="line">        print(<span class="string">"res:"</span>,res)</span><br><span class="line">        print(<span class="string">"单次循环结束"</span>)</span><br><span class="line">    print(<span class="string">"循环结束"</span>)</span><br><span class="line">g = test()</span><br><span class="line">print(next(g))</span><br><span class="line">print(<span class="string">"*"</span>*<span class="number">10</span>)</span><br><span class="line">print(next(g))</span><br><span class="line">print(<span class="string">"*"</span>*<span class="number">20</span>)</span><br><span class="line">print(g.send(<span class="number">7</span>))</span><br></pre></td></tr></table></figure>
 
@@ -191,7 +191,7 @@
   </entry>
   <entry>
     <title>生有涯而知无涯</title>
-    <url>/p/10000.html</url>
+    <url>/p/10000/</url>
     <content><![CDATA[<p>吾生也有涯，而知也无涯。以有涯随无涯，殆已！已而为知者，殆而已矣！为善无近名，为恶无近刑，缘督以为经，可以保身，可以全生，可以养亲，可以尽年。</p>
 ]]></content>
       <categories>
