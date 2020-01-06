@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.turuwei.com/"/>
-  <updated>2020-01-05T10:40:12.582Z</updated>
+  <updated>2020-01-06T05:11:03.889Z</updated>
   <id>http://www.turuwei.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>no matching manifest for windows/amd64 10.0.18362 in the manifest list entri</title>
+    <link href="http://www.turuwei.com/p/10005/"/>
+    <id>http://www.turuwei.com/p/10005/</id>
+    <published>2020-01-06T05:04:47.000Z</published>
+    <updated>2020-01-06T05:11:03.889Z</updated>
+    
+    <content type="html"><![CDATA[<p>Windows下使用docker 下载镜像时 报错：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">no matching manifest for windows&#x2F;amd64 10.0.18362 in the manifest list entri</span><br></pre></td></tr></table></figure><p>或者是另一种错误：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">image operating system &quot;linux&quot; cannot be used on this platform</span><br></pre></td></tr></table></figure><p>都是同一种解决方案：设置daemon.json的experimental:true</p><p><img src="/p/10005/20200106010842.png" alt="Daemon设置"></p>]]></content>
+    
+    <summary type="html">
+    
+      docker配置错误导致Kitematic无法下载容器
+    
+    </summary>
+    
+    
+      <category term="docker" scheme="http://www.turuwei.com/categories/docker/"/>
+    
+      <category term="Kitematic" scheme="http://www.turuwei.com/categories/docker/Kitematic/"/>
+    
+    
+      <category term="bug" scheme="http://www.turuwei.com/tags/bug/"/>
+    
+  </entry>
   
   <entry>
     <title>【NLP】自然语言处理 完整流程</title>
