@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.turuwei.com/"/>
-  <updated>2020-01-09T13:37:29.292Z</updated>
+  <updated>2020-01-10T08:58:15.300Z</updated>
   <id>http://www.turuwei.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>gitalk配置问题</title>
+    <link href="http://www.turuwei.com/p/10007/"/>
+    <id>http://www.turuwei.com/p/10007/</id>
+    <published>2020-01-10T08:47:39.000Z</published>
+    <updated>2020-01-10T08:58:15.300Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天跟着网上给自己的博客配置gitalk评论功能，在配置完成后怎么都不对，看网页中控制台的报错信息是Container not found, document.getElementById: ${container} 这个报错信息，</p><p>然后搜教程说可能是 comments.swig 文件里面的代码贴错位置了，但我就是跟着教程做的，如下：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  正确示例</span></span><br><span class="line">&#123;% elseif theme.valine.appid and theme.valine.appkey %&#125;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"comments"</span> id=<span class="string">"comments"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    &#123;% elseif theme.gitalk.enable %&#125;            <span class="comment">//  将复制的两行代码贴在这个位置</span></span><br><span class="line">    &lt;div id=<span class="string">"gitalk-container"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="comment">//  错误示例</span></span><br><span class="line">&#123;% elseif theme.valine.appid and theme.valine.appkey %&#125;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"comments"</span> id=<span class="string">"comments"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>  </span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"> </span><br><span class="line">&#123;% elseif theme.gitalk.enable %&#125;</span><br><span class="line">&lt;div id=<span class="string">"gitalk-container"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure><p>我之前写的就是正确示例这样，就是怎么都不显示，然后我干脆改成<strong>错误示例</strong>的样子，结果就出来了！！！！我觉得就是elif的逻辑判断问题，不能嵌套。</p><p>另外，在第一次配置后，可能会在评论区显示，没有相关issue，请联系xxx。这个就需要自己想在博客中登录github账号，就能正常显示了。</p><p>完美~</p>]]></content>
+    
+    <summary type="html">
+    
+      comments.swig中插入问题
+    
+    </summary>
+    
+    
+      <category term="Bug" scheme="http://www.turuwei.com/categories/Bug/"/>
+    
+    
+      <category term="gitalk" scheme="http://www.turuwei.com/tags/gitalk/"/>
+    
+      <category term="next" scheme="http://www.turuwei.com/tags/next/"/>
+    
+      <category term="hexo" scheme="http://www.turuwei.com/tags/hexo/"/>
+    
+  </entry>
   
   <entry>
     <title>Dataframe拼接操作报错</title>
