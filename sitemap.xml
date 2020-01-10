@@ -2,23 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://www.turuwei.com/p/10007/</loc>
-    
-    <lastmod>2020-01-10T08:58:15.300Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.turuwei.com/p/10006/</loc>
     
-    <lastmod>2020-01-09T13:37:29.292Z</lastmod>
+    <lastmod>2020-01-10T09:03:27.667Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.turuwei.com/p/10005/</loc>
     
-    <lastmod>2020-01-06T05:11:03.889Z</lastmod>
+    <lastmod>2020-01-10T09:02:10.622Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/categories/index.html</loc>
+    
+    <lastmod>2020-01-10T09:00:55.112Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/index.html</loc>
+    
+    <lastmod>2020-01-10T09:00:08.689Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/p/10007/</loc>
+    
+    <lastmod>2020-01-10T08:58:15.300Z</lastmod>
     
   </url>
   
@@ -65,23 +79,9 @@
   </url>
   
   <url>
-    <loc>http://www.turuwei.com/categories/index.html</loc>
-    
-    <lastmod>2019-12-27T06:28:02.987Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://www.turuwei.com/schedule/index.html</loc>
     
     <lastmod>2019-12-27T06:27:26.261Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://www.turuwei.com/tags/index.html</loc>
-    
-    <lastmod>2019-12-27T06:27:07.425Z</lastmod>
     
   </url>
   
