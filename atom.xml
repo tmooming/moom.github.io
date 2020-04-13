@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://www.turuwei.com/"/>
-  <updated>2020-04-10T07:08:29.133Z</updated>
+  <updated>2020-04-13T12:04:02.043Z</updated>
   <id>http://www.turuwei.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>win10安装 Net Framework 3.5</title>
+    <link href="http://www.turuwei.com/p/10010/"/>
+    <id>http://www.turuwei.com/p/10010/</id>
+    <published>2020-04-13T11:51:22.000Z</published>
+    <updated>2020-04-13T12:04:02.043Z</updated>
+    
+    <content type="html"><![CDATA[<p>论win10安装.net 3.5有多难，试过的朋友都知道，今天我试了网上所有的方法，终于成功安装上了。</p><p>在此，记录一下，唯一一个成功的方法：</p><ol><li><p>首先下载好win10的ios镜像文件，这个就是用于安装系统的（不懂的可以去搜索怎么安装win10系统）。</p><p>这是网址：<a href="https://www.microsoft.com/zh-cn/software-download/windows10ISO" target="_blank" rel="noopener">https://www.microsoft.com/zh-cn/software-download/windows10ISO</a></p></li><li><p>右键点击win10原版镜像，依次选择 打开方式-windows资源管理器 ，记录出现的盘符，以便于后面的操作。</p><p>其中 G、H、I盘是我的一U盘的三个分区，本来win10原版镜像是在我的G盘中。</p><p><img src="/p/10010/image-20200413200026262.png" alt="image-20200413200026262"></p></li><li><p>以管理员身份运行命令提示符，输入以下命令行：<br>“<strong><em>dism.exe /online /enable-feature /featurename:netfx3 /Source:E:\sources\sxs\</em></strong>”<br>或者输入：“<strong><em>Dism.exe /online /enable-feature /featurename:NetFX3/all /Source:E:/sources/sxs /LimitAccess\</em></strong>”</p><p>我把E盘改成I盘就可以了</p></li></ol><p><img src="/p/10010/image-20200413195237962.png" alt="image-20200413195237962"></p><p><strong>困扰已久的问题终于解决了！！</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;论win10安装.net 3.5有多难，试过的朋友都知道，今天我试了网上所有的方法，终于成功安装上了。&lt;/p&gt;&lt;p&gt;在此，记录一下，唯一一个成功的方法：&lt;/p&gt;&lt;ol&gt;&lt;li&gt;&lt;p&gt;首先下载好win10的ios镜像文件，这个就是用于安装系统的（不懂的可以去搜索怎么安装win
+      
+    
+    </summary>
+    
+    
+      <category term="软件安装" scheme="http://www.turuwei.com/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+    
+    
+      <category term="windows" scheme="http://www.turuwei.com/tags/windows/"/>
+    
+      <category term=".Net" scheme="http://www.turuwei.com/tags/Net/"/>
+    
+  </entry>
   
   <entry>
     <title>ubuntu18.0.4安装pgadmin4及问题解决</title>
