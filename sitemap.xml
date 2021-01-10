@@ -4,148 +4,411 @@
   <url>
     <loc>http://www.turuwei.com/p/10012/</loc>
     
-    <lastmod>2020-05-07T02:36:13.325Z</lastmod>
+    <lastmod>2020-05-07</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.turuwei.com/p/10011/</loc>
     
-    <lastmod>2020-04-25T02:46:11.490Z</lastmod>
+    <lastmod>2020-04-25</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.turuwei.com/p/10011/</loc>
     
-    <lastmod>2020-04-22T06:22:53.994Z</lastmod>
+    <lastmod>2020-04-22</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.turuwei.com/p/10010/</loc>
     
-    <lastmod>2020-04-13T12:04:02.043Z</lastmod>
+    <lastmod>2020-04-13</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.turuwei.com/p/10009/</loc>
     
-    <lastmod>2020-04-10T07:08:29.133Z</lastmod>
+    <lastmod>2020-04-10</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.turuwei.com/p/10008/</loc>
     
-    <lastmod>2020-04-08T01:54:11.061Z</lastmod>
+    <lastmod>2020-04-08</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.turuwei.com/p/10006/</loc>
     
-    <lastmod>2020-01-10T09:11:25.237Z</lastmod>
+    <lastmod>2020-01-10</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.turuwei.com/p/10005/</loc>
     
-    <lastmod>2020-01-10T09:10:29.413Z</lastmod>
+    <lastmod>2020-01-10</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.turuwei.com/categories/index.html</loc>
     
-    <lastmod>2020-01-10T09:00:55.112Z</lastmod>
+    <lastmod>2020-01-10</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.turuwei.com/tags/index.html</loc>
     
-    <lastmod>2020-01-10T09:00:08.689Z</lastmod>
+    <lastmod>2020-01-10</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.turuwei.com/p/10007/</loc>
     
-    <lastmod>2020-01-10T08:58:15.300Z</lastmod>
+    <lastmod>2020-01-10</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.turuwei.com/p/10004/</loc>
     
-    <lastmod>2020-01-05T10:40:12.582Z</lastmod>
+    <lastmod>2020-01-05</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.turuwei.com/p/10003/</loc>
     
-    <lastmod>2020-01-04T05:44:39.865Z</lastmod>
+    <lastmod>2020-01-04</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.turuwei.com/p/10002/</loc>
     
-    <lastmod>2020-01-03T02:38:47.389Z</lastmod>
+    <lastmod>2020-01-03</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.turuwei.com/p/10001/</loc>
     
-    <lastmod>2019-12-31T03:55:01.128Z</lastmod>
+    <lastmod>2019-12-31</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.turuwei.com/p/10000/</loc>
     
-    <lastmod>2019-12-27T07:15:55.280Z</lastmod>
+    <lastmod>2019-12-27</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.turuwei.com/about/index.html</loc>
     
-    <lastmod>2019-12-27T06:28:24.156Z</lastmod>
+    <lastmod>2019-12-27</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.turuwei.com/schedule/index.html</loc>
     
-    <lastmod>2019-12-27T06:27:26.261Z</lastmod>
+    <lastmod>2019-12-27</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.turuwei.com/logs/index.html</loc>
     
-    <lastmod>2019-12-27T06:26:32.949Z</lastmod>
+    <lastmod>2019-12-27</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.turuwei.com/commonweal/index.html</loc>
     
-    <lastmod>2019-12-27T06:26:12.294Z</lastmod>
+    <lastmod>2019-12-27</lastmod>
     
   </url>
   
   <url>
     <loc>http://www.turuwei.com/uploads/index.html</loc>
     
-    <lastmod>2019-12-27T05:18:35.494Z</lastmod>
+    <lastmod>2019-12-27</lastmod>
     
+  </url>
+  
+
+  <url>
+    <loc>http://www.turuwei.com/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/%E7%AE%97%E6%B3%95/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/%E5%88%B7%E9%A2%98/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/codewars/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/pandas/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/Dataframe/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/%E5%B9%B6%E8%A1%8C/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/Ubuntu/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/Pycharm/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/Jupyter/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/%E7%8E%AF%E5%A2%83%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/gitalk/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/next/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/hexo/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/docker/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/Kitematic/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/Python/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/%E8%AF%AD%E6%B3%95/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/pgadmin4/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/postgresql/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/apache/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/anaconda3/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/%E5%9F%BA%E7%A1%80/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/windows/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/Net/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/tags/%E9%9A%8F%E7%AC%94/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+
+  
+  <url>
+    <loc>http://www.turuwei.com/categories/Python/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/categories/Bug/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/categories/%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/categories/NLP/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/categories/%E8%93%84%E6%B0%B4%E6%B1%A0%E6%8A%BD%E6%A0%B7/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/categories/Bert/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/categories/%E8%93%84%E6%B0%B4%E6%B1%A0%E6%8A%BD%E6%A0%B7/%E6%95%B0%E6%8D%AE%E6%B5%81%E9%87%87%E6%A0%B7/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/categories/Bert/tensorflow/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://www.turuwei.com/categories/Bert/tensorflow/numpy/</loc>
+    <lastmod>2021-01-10</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
   </url>
   
 </urlset>
