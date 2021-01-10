@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.3.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -26,12 +26,11 @@
 <meta property="og:url" content="http://www.turuwei.com/p/10011/index.html">
 <meta property="og:site_name" content="TuRuwei&#39;s Blog">
 <meta property="og:description" content="配置bert-base&#x3D;0.0.9正确环境">
+<meta property="og:locale">
 <meta property="article:published_time" content="2020-04-22T03:22:52.000Z">
 <meta property="article:modified_time" content="2020-04-22T06:22:53.994Z">
 <meta property="article:author" content="tmooming">
-<meta property="article:tag" content="bert-base">
-<meta property="article:tag" content="tensorflow">
-<meta property="article:tag" content="环境">
+<meta property="article:tag" content="Python">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://www.turuwei.com/p/10011/">
@@ -88,7 +87,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="تشغيل شريط التصفح">
+    <div class="toggle" aria-label="Navigationsleiste an/ausschalten">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -118,12 +117,12 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Startseite</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>الأرشيفات</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archiv</a>
 
   </li>
   </ul>
@@ -175,24 +174,24 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">نُشر في</span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
-              <time title="أُنشأ: 2020-04-22 11:22:52 / عُدل: 14:22:53" itemprop="dateCreated datePublished" datetime="2020-04-22T11:22:52+08:00">2020-04-22</time>
+              <time title="Erstellt: 2020-04-22 11:22:52 / Geändert am: 14:22:53" itemprop="dateCreated datePublished" datetime="2020-04-22T11:22:52+08:00">2020-04-22</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">في</span>
+              <span class="post-meta-item-text">in</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Bert/" itemprop="url" rel="index"><span itemprop="name">Bert</span></a>
                 </span>
-                  ، 
+                  . 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Bert/tensorflow/" itemprop="url" rel="index"><span itemprop="name">tensorflow</span></a>
                 </span>
-                  ، 
+                  . 
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Bert/tensorflow/numpy/" itemprop="url" rel="index"><span itemprop="name">numpy</span></a>
                 </span>
@@ -211,22 +210,19 @@
 
       
         <p><code>先说结论：bert-base 0.0.9 |  tensorflow 1.15.2 | numpy 1.16.4</code></p>
-<p>我是按照这篇博客安装bert-base-ner：<a href="https://blog.csdn.net/macanv/article/details/85684284" target="_blank" rel="noopener">https://blog.csdn.net/macanv/article/details/85684284</a></p>
+<p>我是按照这篇博客安装bert-base-ner：<a target="_blank" rel="noopener" href="https://blog.csdn.net/macanv/article/details/85684284">https://blog.csdn.net/macanv/article/details/85684284</a></p>
 <p>不过这篇安装的是bert-base==0.0.7，而且也没有说明对应的tensorflow是哪个版本的。</p>
 <p>于是，我直接安装了最新的bert-base==0.0.9版本</p>
-<p>然后 pip install tensorflow ，太慢了，我直接去镜像源下载whl文件进行安装：<a href="https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/tensorflow/" target="_blank" rel="noopener">https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/tensorflow/</a></p>
+<p>然后 pip install tensorflow ，太慢了，我直接去镜像源下载whl文件进行安装：<a target="_blank" rel="noopener" href="https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/tensorflow/">https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple/tensorflow/</a></p>
 <p>先选用了tensorflow==2.0.0版本，出现报错，说setuptools版本不对，行吧，卸载重装setuptools，结果出现这个报错：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cannot remove entries from nonexistent file c:\programdata\anaconda3\envs\py37\lib\site-packages\easy-install.pth</span><br></pre></td></tr></table></figure>
-
 <p>最后找到办法：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"># windows 用：</span><br><span class="line">echo test&gt;c:\programdata\anaconda3\envs\py37\lib\site-packages\easy-install.pth</span><br><span class="line"># linux 用：</span><br><span class="line">touch c:\programdata\anaconda3\envs\py37\lib\site-packages\easy-install.pth</span><br></pre></td></tr></table></figure>
-
 <p>然后就可以顺利卸载并安装setuptools最新版本了（46.x.x）了</p>
 <p>然后tensorflow==2.0.0安装成功，结果运行bert-base-ner-train -help又报错，好吧，是tensorflow版本太高的原因。</p>
 <p>卸载掉2.0.0，我重装tensorflow==1.15.2，可以用，但是会出现警告，去警告的文件改下就行了。</p>
 <p>另外，numpy版本可能出现问题（我原本的是1.18.x，高了）,卸载numpy，重新安装numpy==1.16.4</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">(py37) &gt; bert-base-ner-train -help</span><br><span class="line">usage: bert-base-ner-train [-h] [-data_dir DATA_DIR]</span><br><span class="line">                           [-bert_config_file BERT_CONFIG_FILE]</span><br><span class="line">                           [-output_dir OUTPUT_DIR]</span><br><span class="line">                           [-init_checkpoint INIT_CHECKPOINT]</span><br><span class="line">                           [-vocab_file VOCAB_FILE]</span><br><span class="line">                           [-max_seq_length MAX_SEQ_LENGTH]</span><br><span class="line">                           [-do_train DO_TRAIN] [-do_eval DO_EVAL]</span><br><span class="line">                           [-do_predict DO_PREDICT] [-batch_size BATCH_SIZE]</span><br><span class="line">                           [-learning_rate LEARNING_RATE]</span><br><span class="line">                           [-num_train_epochs NUM_TRAIN_EPOCHS]</span><br><span class="line">                           [-dropout_rate DROPOUT_RATE] [-clip CLIP]</span><br><span class="line">                           [-warmup_proportion WARMUP_PROPORTION]</span><br><span class="line">                           [-lstm_size LSTM_SIZE] [-num_layers NUM_LAYERS]</span><br><span class="line">                           [-cell CELL]</span><br><span class="line">                           [-save_checkpoints_steps SAVE_CHECKPOINTS_STEPS]</span><br><span class="line">                           [-save_summary_steps SAVE_SUMMARY_STEPS]</span><br><span class="line">                           [-filter_adam_var FILTER_ADAM_VAR]</span><br><span class="line">                           [-do_lower_case DO_LOWER_CASE] [-clean CLEAN]</span><br><span class="line">                           [-device_map DEVICE_MAP] [-label_list LABEL_LIST]</span><br><span class="line">                           [-verbose] [-ner NER] [-version]</span><br><span class="line">bert-base-ner-train: error: argument -h&#x2F;--help: ignored explicit argument &#39;elp&#39;</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">(py37) &gt; bert-base-ner-train -help</span><br><span class="line">usage: bert-base-ner-train [-h] [-data_dir DATA_DIR]</span><br><span class="line">                           [-bert_config_file BERT_CONFIG_FILE]</span><br><span class="line">                           [-output_dir OUTPUT_DIR]</span><br><span class="line">                           [-init_checkpoint INIT_CHECKPOINT]</span><br><span class="line">                           [-vocab_file VOCAB_FILE]</span><br><span class="line">                           [-max_seq_length MAX_SEQ_LENGTH]</span><br><span class="line">                           [-do_train DO_TRAIN] [-do_eval DO_EVAL]</span><br><span class="line">                           [-do_predict DO_PREDICT] [-batch_size BATCH_SIZE]</span><br><span class="line">                           [-learning_rate LEARNING_RATE]</span><br><span class="line">                           [-num_train_epochs NUM_TRAIN_EPOCHS]</span><br><span class="line">                           [-dropout_rate DROPOUT_RATE] [-clip CLIP]</span><br><span class="line">                           [-warmup_proportion WARMUP_PROPORTION]</span><br><span class="line">                           [-lstm_size LSTM_SIZE] [-num_layers NUM_LAYERS]</span><br><span class="line">                           [-cell CELL]</span><br><span class="line">                           [-save_checkpoints_steps SAVE_CHECKPOINTS_STEPS]</span><br><span class="line">                           [-save_summary_steps SAVE_SUMMARY_STEPS]</span><br><span class="line">                           [-filter_adam_var FILTER_ADAM_VAR]</span><br><span class="line">                           [-do_lower_case DO_LOWER_CASE] [-clean CLEAN]</span><br><span class="line">                           [-device_map DEVICE_MAP] [-label_list LABEL_LIST]</span><br><span class="line">                           [-verbose] [-ner NER] [-version]</span><br><span class="line">bert-base-ner-train: error: argument -h&#x2F;--help: ignored explicit argument &#39;elp&#39;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>​                                                               <strong>完美</strong></p>
 
     </div>
@@ -302,10 +298,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          المحتويات
+          Inhaltsverzeichnis
         </li>
         <li class="sidebar-nav-overview">
-          عام
+          Übersicht
         </li>
       </ul>
 
@@ -325,18 +321,18 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">14</span>
-          <span class="site-state-item-name">المقالات</span>
+          <span class="site-state-item-name">Artikel</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
         <span class="site-state-item-count">11</span>
-        <span class="site-state-item-name">التصنيفات</span></a>
+        <span class="site-state-item-name">Kategorien</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
         <span class="site-state-item-count">25</span>
-        <span class="site-state-item-name">الوسوم</span></a>
+        <span class="site-state-item-name">schlagwörter</span></a>
       </div>
   </nav>
 </div>
@@ -368,7 +364,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">tmooming</span>
 </div>
-  <div class="powered-by">تطبيق الموقع <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
 
         

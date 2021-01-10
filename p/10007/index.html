@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.3.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -26,10 +26,10 @@
 <meta property="og:url" content="http://www.turuwei.com/p/10007/index.html">
 <meta property="og:site_name" content="TuRuwei&#39;s Blog">
 <meta property="og:description" content="comments.swig中插入问题">
+<meta property="og:locale">
 <meta property="article:published_time" content="2020-01-10T08:47:39.000Z">
 <meta property="article:modified_time" content="2020-01-10T08:58:15.300Z">
 <meta property="article:author" content="tmooming">
-<meta property="article:tag" content="Containner">
 <meta property="article:tag" content="gitalk">
 <meta property="article:tag" content="next">
 <meta property="article:tag" content="hexo">
@@ -89,7 +89,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="تشغيل شريط التصفح">
+    <div class="toggle" aria-label="Navigationsleiste an/ausschalten">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -119,12 +119,12 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Startseite</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>الأرشيفات</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archiv</a>
 
   </li>
   </ul>
@@ -176,16 +176,16 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">نُشر في</span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
-              <time title="أُنشأ: 2020-01-10 16:47:39 / عُدل: 16:58:15" itemprop="dateCreated datePublished" datetime="2020-01-10T16:47:39+08:00">2020-01-10</time>
+              <time title="Erstellt: 2020-01-10 16:47:39 / Geändert am: 16:58:15" itemprop="dateCreated datePublished" datetime="2020-01-10T16:47:39+08:00">2020-01-10</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">في</span>
+              <span class="post-meta-item-text">in</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Bug/" itemprop="url" rel="index"><span itemprop="name">Bug</span></a>
                 </span>
@@ -205,8 +205,7 @@
       
         <p>今天跟着网上给自己的博客配置gitalk评论功能，在配置完成后怎么都不对，看网页中控制台的报错信息是Container not found, document.getElementById: ${container} 这个报错信息，</p>
 <p>然后搜教程说可能是 comments.swig 文件里面的代码贴错位置了，但我就是跟着教程做的，如下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  正确示例</span></span><br><span class="line">&#123;% elseif theme.valine.appid and theme.valine.appkey %&#125;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"comments"</span> id=<span class="string">"comments"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">    &#123;% elseif theme.gitalk.enable %&#125;            <span class="comment">//  将复制的两行代码贴在这个位置</span></span><br><span class="line">    &lt;div id=<span class="string">"gitalk-container"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="comment">//  错误示例</span></span><br><span class="line">&#123;% elseif theme.valine.appid and theme.valine.appkey %&#125;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"comments"</span> id=<span class="string">"comments"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span>  </span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"> </span><br><span class="line">&#123;% elseif theme.gitalk.enable %&#125;</span><br><span class="line">&lt;div id=<span class="string">"gitalk-container"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
-
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  正确示例</span></span><br><span class="line">&#123;% elseif theme.valine.appid and theme.valine.appkey %&#125;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;comments&quot;</span> id=<span class="string">&quot;comments&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">    &#123;% elseif theme.gitalk.enable %&#125;            <span class="comment">//  将复制的两行代码贴在这个位置</span></span><br><span class="line">    &lt;div id=<span class="string">&quot;gitalk-container&quot;</span>&gt;&lt;/div&gt;</span><br><span class="line">  &#123;% endif %&#125;</span><br><span class="line">  </span><br><span class="line">  </span><br><span class="line"><span class="comment">//  错误示例</span></span><br><span class="line">&#123;% elseif theme.valine.appid and theme.valine.appkey %&#125;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">&quot;comments&quot;</span> id=<span class="string">&quot;comments&quot;</span>&gt;&lt;/div&gt;  </span><br><span class="line">&#123;% endif %&#125;</span><br><span class="line"> </span><br><span class="line">&#123;% elseif theme.gitalk.enable %&#125;</span><br><span class="line">&lt;div id=<span class="string">&quot;gitalk-container&quot;</span>&gt;&lt;/div&gt;   </span><br></pre></td></tr></table></figure>
 <p>我之前写的就是正确示例这样，就是怎么都不显示，然后我干脆改成<strong>错误示例</strong>的样子，结果就出来了！！！！我觉得就是elif的逻辑判断问题，不能嵌套。</p>
 <p>另外，在第一次配置后，可能会在评论区显示，没有相关issue，请联系xxx。这个就需要自己想在博客中登录github账号，就能正常显示了。</p>
 <p>完美~</p>
@@ -286,10 +285,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          المحتويات
+          Inhaltsverzeichnis
         </li>
         <li class="sidebar-nav-overview">
-          عام
+          Übersicht
         </li>
       </ul>
 
@@ -309,18 +308,18 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">14</span>
-          <span class="site-state-item-name">المقالات</span>
+          <span class="site-state-item-name">Artikel</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
         <span class="site-state-item-count">11</span>
-        <span class="site-state-item-name">التصنيفات</span></a>
+        <span class="site-state-item-name">Kategorien</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
         <span class="site-state-item-count">25</span>
-        <span class="site-state-item-name">الوسوم</span></a>
+        <span class="site-state-item-name">schlagwörter</span></a>
       </div>
   </nav>
 </div>
@@ -352,7 +351,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">tmooming</span>
 </div>
-  <div class="powered-by">تطبيق الموقع <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
 
         

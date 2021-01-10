@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.3.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -26,6 +26,7 @@
 <meta property="og:url" content="http://www.turuwei.com/p/10003/index.html">
 <meta property="og:site_name" content="TuRuwei&#39;s Blog">
 <meta property="og:description" content="这是codewars上一道 1kyu等级的题，刚看到觉得很容易，越想越难，现在还没有一个好的解决办法">
+<meta property="og:locale">
 <meta property="article:published_time" content="2020-01-04T05:18:20.000Z">
 <meta property="article:modified_time" content="2020-01-04T05:44:39.865Z">
 <meta property="article:author" content="tmooming">
@@ -88,7 +89,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="تشغيل شريط التصفح">
+    <div class="toggle" aria-label="Navigationsleiste an/ausschalten">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -118,12 +119,12 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Startseite</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>الأرشيفات</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archiv</a>
 
   </li>
   </ul>
@@ -175,16 +176,16 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">نُشر في</span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
-              <time title="أُنشأ: 2020-01-04 13:18:20 / عُدل: 13:44:39" itemprop="dateCreated datePublished" datetime="2020-01-04T13:18:20+08:00">2020-01-04</time>
+              <time title="Erstellt: 2020-01-04 13:18:20 / Geändert am: 13:44:39" itemprop="dateCreated datePublished" datetime="2020-01-04T13:18:20+08:00">2020-01-04</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">في</span>
+              <span class="post-meta-item-text">in</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
                 </span>
@@ -203,7 +204,7 @@
       
         <p><strong>题目如下：</strong></p>
 <blockquote>
-<p><a href="https://www.codewars.com/kata/become-immortal/" target="_blank" rel="noopener"><strong>BECOME IMMORTAL</strong></a></p>
+<p><a target="_blank" rel="noopener" href="https://www.codewars.com/kata/become-immortal/"><strong>BECOME IMMORTAL</strong></a></p>
 <blockquote>
 <p>Instructions</p>
 <p>In the nation of CodeWars, there lives an Elder who has lived for a long time. Some people call him the Grandpatriarch, but most people just refer to him as the Elder.</p>
@@ -216,14 +217,13 @@
 <li><p>However, not every ritual goes perfectly. The donation of time from the worshippers to the Elder will experience a transmission loss <code>l</code> (in seconds). Also, if a specific worshipper cannot channel more than <code>l</code> seconds, the Elder will not be able to receive this worshipper’s donation.</p>
 </li>
 </ul>
-<p>The estimated age of the Elder is so old it’s probably bigger than the total number of atoms in the universe. However, the lazy programmers (who <code>made a big news</code> by inventing <a href="https://en.wikipedia.org/wiki/Time_formatting_and_storage_bugs" target="_blank" rel="noopener">the Y2K bug and other related things</a>) apparently didn’t think thoroughly enough about this, and so their <code>simple</code> date-time system can only record time from 0 to <code>t-1</code> seconds. If the elder received the total amount of time (in seconds) more than the system can store, it will be wrapped around so that the time would be between the range 0 to <code>t-1</code>.</p>
+<p>The estimated age of the Elder is so old it’s probably bigger than the total number of atoms in the universe. However, the lazy programmers (who <code>made a big news</code> by inventing <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Time_formatting_and_storage_bugs">the Y2K bug and other related things</a>) apparently didn’t think thoroughly enough about this, and so their <code>simple</code> date-time system can only record time from 0 to <code>t-1</code> seconds. If the elder received the total amount of time (in seconds) more than the system can store, it will be wrapped around so that the time would be between the range 0 to <code>t-1</code>.</p>
 <p>Given <code>m</code>, <code>n</code>, <code>l</code> and <code>t</code>, please find the number of seconds the Elder has received, represented in the poor programmer’s date-time system.</p>
 <p>(Note: <code>t</code> will never be bigger than <code>2^32 - 1</code>, and in JS, <code>2^26 - 1</code>.)</p>
 </blockquote>
 </blockquote>
 <p>我的解法：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">elder_age</span><span class="params">(m,n,l,t)</span>:</span></span><br><span class="line">    matirc = (max((j^i)-l,<span class="number">0</span>) <span class="keyword">for</span> j <span class="keyword">in</span> range(m) <span class="keyword">for</span> i <span class="keyword">in</span> range(n))</span><br><span class="line">    <span class="keyword">return</span> sum(matirc)%t</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">elder_age</span>(<span class="params">m,n,l,t</span>):</span></span><br><span class="line">    matirc = (<span class="built_in">max</span>((j^i)-l,<span class="number">0</span>) <span class="keyword">for</span> j <span class="keyword">in</span> <span class="built_in">range</span>(m) <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n))</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sum</span>(matirc)%t</span><br></pre></td></tr></table></figure>
 <p>正确结果比较容易求出来，这道题目的难点在于对程序的优化，刚开始想用列表生成式，发现运行时间太长了，就改成了generator，同时这个方法占内存太多，所以算是最粗糙的一个解法了，以后想到了再重新写。</p>
     </div>
 
@@ -300,10 +300,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          المحتويات
+          Inhaltsverzeichnis
         </li>
         <li class="sidebar-nav-overview">
-          عام
+          Übersicht
         </li>
       </ul>
 
@@ -323,18 +323,18 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">14</span>
-          <span class="site-state-item-name">المقالات</span>
+          <span class="site-state-item-name">Artikel</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
         <span class="site-state-item-count">11</span>
-        <span class="site-state-item-name">التصنيفات</span></a>
+        <span class="site-state-item-name">Kategorien</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
         <span class="site-state-item-count">25</span>
-        <span class="site-state-item-name">الوسوم</span></a>
+        <span class="site-state-item-name">schlagwörter</span></a>
       </div>
   </nav>
 </div>
@@ -366,7 +366,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">tmooming</span>
 </div>
-  <div class="powered-by">تطبيق الموقع <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
 
         

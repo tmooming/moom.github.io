@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.3.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -26,12 +26,13 @@
 <meta property="og:url" content="http://www.turuwei.com/p/10006/index.html">
 <meta property="og:site_name" content="TuRuwei&#39;s Blog">
 <meta property="og:description" content="Dataframe在拆分后再合并，需要进行reset_index操作">
+<meta property="og:locale">
 <meta property="article:published_time" content="2020-01-09T13:25:36.000Z">
 <meta property="article:modified_time" content="2020-01-10T09:11:25.237Z">
 <meta property="article:author" content="tmooming">
-<meta property="article:tag" content="multiprocessing">
 <meta property="article:tag" content="pandas">
-<meta property="article:tag" content="Python">
+<meta property="article:tag" content="Dataframe">
+<meta property="article:tag" content="并行">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="http://www.turuwei.com/p/10006/">
@@ -88,7 +89,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="تشغيل شريط التصفح">
+    <div class="toggle" aria-label="Navigationsleiste an/ausschalten">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -118,12 +119,12 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Startseite</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>الأرشيفات</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archiv</a>
 
   </li>
   </ul>
@@ -175,22 +176,22 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">نُشر في</span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
 
-              <time title="أُنشأ: 2020-01-09 21:25:36" itemprop="dateCreated datePublished" datetime="2020-01-09T21:25:36+08:00">2020-01-09</time>
+              <time title="Erstellt: 2020-01-09 21:25:36" itemprop="dateCreated datePublished" datetime="2020-01-09T21:25:36+08:00">2020-01-09</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
-                <span class="post-meta-item-text">عُدل في</span>
-                <time title="عُدل: 2020-01-10 17:11:25" itemprop="dateModified" datetime="2020-01-10T17:11:25+08:00">2020-01-10</time>
+                <span class="post-meta-item-text">Bearbeitet am</span>
+                <time title="Geändert am: 2020-01-10 17:11:25" itemprop="dateModified" datetime="2020-01-10T17:11:25+08:00">2020-01-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">في</span>
+              <span class="post-meta-item-text">in</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/Python/" itemprop="url" rel="index"><span itemprop="name">Python</span></a>
                 </span>
@@ -210,11 +211,9 @@
       
         <p>今天在优化一个程序时遇到的问题，记录一下。</p>
 <p>这是一个对csv文件中的字段导入为Dataframe格式，然后计算相似度的程序，因为数据量很大，需要两个小时才能跑完，所以决定进行并行化。</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> multiprocessing <span class="keyword">as</span> mp</span><br><span class="line">num = mp.cpu_count()<span class="number">-1</span></span><br><span class="line">    pool = mp.Pool(processes=num)</span><br><span class="line">    df_split = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>,len(df), len(df)//num):</span><br><span class="line">        <span class="comment"># 原本写的</span></span><br><span class="line">        <span class="comment"># df_split.append(df.iloc[i:min(i + len(df)//num, len(df)),:])</span></span><br><span class="line">        <span class="comment"># 修改后</span></span><br><span class="line">        df_split.append(df.iloc[i:min(i + len(df)//num, len(df)),:].reset_index())</span><br><span class="line">    <span class="comment"># mllistBZ是自己写的方法，传入Dataframe格式，返回的也是Dataframe格式</span></span><br><span class="line">    df = pd.concat(pool.map(mllistBZ, df_split))</span><br><span class="line">    pool.close()</span><br><span class="line">    pool.join()</span><br><span class="line">    df.to_csv(<span class="string">'标准化.csv'</span>, index=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> multiprocessing <span class="keyword">as</span> mp</span><br><span class="line">num = mp.cpu_count()-<span class="number">1</span></span><br><span class="line">    pool = mp.Pool(processes=num)</span><br><span class="line">    df_split = []</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>,<span class="built_in">len</span>(df), <span class="built_in">len</span>(df)//num):</span><br><span class="line">        <span class="comment"># 原本写的</span></span><br><span class="line">        <span class="comment"># df_split.append(df.iloc[i:min(i + len(df)//num, len(df)),:])</span></span><br><span class="line">        <span class="comment"># 修改后</span></span><br><span class="line">        df_split.append(df.iloc[i:<span class="built_in">min</span>(i + <span class="built_in">len</span>(df)//num, <span class="built_in">len</span>(df)),:].reset_index())</span><br><span class="line">    <span class="comment"># mllistBZ是自己写的方法，传入Dataframe格式，返回的也是Dataframe格式</span></span><br><span class="line">    df = pd.concat(pool.<span class="built_in">map</span>(mllistBZ, df_split))</span><br><span class="line">    pool.close()</span><br><span class="line">    pool.join()</span><br><span class="line">    df.to_csv(<span class="string">&#x27;标准化.csv&#x27;</span>, index=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure>
 <p>在晚上找了资料，写完后运行就报错。最后排查发现是因为Dataframe在拆分后再合并，其下标就不对了，需要进行reset_index（）。否则就会报如下错误。不过，如果仅仅是打印出来，也是不会报错的。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&#x2F;home&#x2F;turw&#x2F;anaconda3&#x2F;lib&#x2F;python3.7&#x2F;multiprocessing&#x2F;pool.py&quot;, line 121, in worker</span><br><span class="line">    result &#x3D; (True, func(*args, **kwds))</span><br><span class="line">  File &quot;&#x2F;home&#x2F;turw&#x2F;anaconda3&#x2F;lib&#x2F;python3.7&#x2F;multiprocessing&#x2F;pool.py&quot;, line 44, in mapstar</span><br><span class="line">    return list(map(*args))</span><br><span class="line">  File &quot;biaozhunhua.py&quot;, line 128, in mllistBZ</span><br><span class="line">    if document[&#39;其他&#39;][i] &#x3D;&#x3D; &#39;&#39; or document[&#39;其他&#39;][i] is np.nan:</span><br><span class="line">  File &quot;&#x2F;home&#x2F;turw&#x2F;anaconda3&#x2F;lib&#x2F;python3.7&#x2F;site-packages&#x2F;pandas&#x2F;core&#x2F;series.py&quot;, line 868, in __getitem__</span><br><span class="line">    result &#x3D; self.index.get_value(self, key)</span><br><span class="line">  File &quot;&#x2F;home&#x2F;turw&#x2F;anaconda3&#x2F;lib&#x2F;python3.7&#x2F;site-packages&#x2F;pandas&#x2F;core&#x2F;indexes&#x2F;base.py&quot;, line 4375, in get_value</span><br><span class="line">    tz&#x3D;getattr(series.dtype, &#39;tz&#39;, None))</span><br><span class="line">  File &quot;pandas&#x2F;_libs&#x2F;index.pyx&quot;, line 81, in pandas._libs.index.IndexEngine.get_value</span><br><span class="line">  File &quot;pandas&#x2F;_libs&#x2F;index.pyx&quot;, line 89, in pandas._libs.index.IndexEngine.get_value</span><br><span class="line">  File &quot;pandas&#x2F;_libs&#x2F;index.pyx&quot;, line 132, in pandas._libs.index.IndexEngine.get_loc</span><br><span class="line">  File &quot;pandas&#x2F;_libs&#x2F;hashtable_class_helper.pxi&quot;, line 987, in pandas._libs.hashtable.Int64HashTable.get_item</span><br><span class="line">  File &quot;pandas&#x2F;_libs&#x2F;hashtable_class_helper.pxi&quot;, line 993, in pandas._libs.hashtable.Int64HashTable.get_item</span><br><span class="line">KeyError: 0</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">The above exception was the direct cause of the following exception:</span><br><span class="line"></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;biaozhunhua.py&quot;, line 195, in &lt;module&gt;</span><br><span class="line">    run(df)</span><br><span class="line">  File &quot;biaozhunhua.py&quot;, line 162, in run</span><br><span class="line">    df &#x3D; pd.concat(pool.map(mllistBZ, df_split))</span><br><span class="line">  File &quot;&#x2F;home&#x2F;turw&#x2F;anaconda3&#x2F;lib&#x2F;python3.7&#x2F;multiprocessing&#x2F;pool.py&quot;, line 268, in map</span><br><span class="line">    return self._map_async(func, iterable, mapstar, chunksize).get()</span><br><span class="line">  File &quot;&#x2F;home&#x2F;turw&#x2F;anaconda3&#x2F;lib&#x2F;python3.7&#x2F;multiprocessing&#x2F;pool.py&quot;, line 657, in get</span><br><span class="line">    raise self._value</span><br><span class="line">KeyError: 0</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;&#x2F;home&#x2F;turw&#x2F;anaconda3&#x2F;lib&#x2F;python3.7&#x2F;multiprocessing&#x2F;pool.py&quot;, line 121, in worker</span><br><span class="line">    result &#x3D; (True, func(*args, **kwds))</span><br><span class="line">  File &quot;&#x2F;home&#x2F;turw&#x2F;anaconda3&#x2F;lib&#x2F;python3.7&#x2F;multiprocessing&#x2F;pool.py&quot;, line 44, in mapstar</span><br><span class="line">    return list(map(*args))</span><br><span class="line">  File &quot;biaozhunhua.py&quot;, line 128, in mllistBZ</span><br><span class="line">    if document[&#39;其他&#39;][i] &#x3D;&#x3D; &#39;&#39; or document[&#39;其他&#39;][i] is np.nan:</span><br><span class="line">  File &quot;&#x2F;home&#x2F;turw&#x2F;anaconda3&#x2F;lib&#x2F;python3.7&#x2F;site-packages&#x2F;pandas&#x2F;core&#x2F;series.py&quot;, line 868, in __getitem__</span><br><span class="line">    result &#x3D; self.index.get_value(self, key)</span><br><span class="line">  File &quot;&#x2F;home&#x2F;turw&#x2F;anaconda3&#x2F;lib&#x2F;python3.7&#x2F;site-packages&#x2F;pandas&#x2F;core&#x2F;indexes&#x2F;base.py&quot;, line 4375, in get_value</span><br><span class="line">    tz&#x3D;getattr(series.dtype, &#39;tz&#39;, None))</span><br><span class="line">  File &quot;pandas&#x2F;_libs&#x2F;index.pyx&quot;, line 81, in pandas._libs.index.IndexEngine.get_value</span><br><span class="line">  File &quot;pandas&#x2F;_libs&#x2F;index.pyx&quot;, line 89, in pandas._libs.index.IndexEngine.get_value</span><br><span class="line">  File &quot;pandas&#x2F;_libs&#x2F;index.pyx&quot;, line 132, in pandas._libs.index.IndexEngine.get_loc</span><br><span class="line">  File &quot;pandas&#x2F;_libs&#x2F;hashtable_class_helper.pxi&quot;, line 987, in pandas._libs.hashtable.Int64HashTable.get_item</span><br><span class="line">  File &quot;pandas&#x2F;_libs&#x2F;hashtable_class_helper.pxi&quot;, line 993, in pandas._libs.hashtable.Int64HashTable.get_item</span><br><span class="line">KeyError: 0</span><br><span class="line">&quot;&quot;&quot;</span><br><span class="line"></span><br><span class="line">The above exception was the direct cause of the following exception:</span><br><span class="line"></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File &quot;biaozhunhua.py&quot;, line 195, in &lt;module&gt;</span><br><span class="line">    run(df)</span><br><span class="line">  File &quot;biaozhunhua.py&quot;, line 162, in run</span><br><span class="line">    df &#x3D; pd.concat(pool.map(mllistBZ, df_split))</span><br><span class="line">  File &quot;&#x2F;home&#x2F;turw&#x2F;anaconda3&#x2F;lib&#x2F;python3.7&#x2F;multiprocessing&#x2F;pool.py&quot;, line 268, in map</span><br><span class="line">    return self._map_async(func, iterable, mapstar, chunksize).get()</span><br><span class="line">  File &quot;&#x2F;home&#x2F;turw&#x2F;anaconda3&#x2F;lib&#x2F;python3.7&#x2F;multiprocessing&#x2F;pool.py&quot;, line 657, in get</span><br><span class="line">    raise self._value</span><br><span class="line">KeyError: 0</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -291,10 +290,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          المحتويات
+          Inhaltsverzeichnis
         </li>
         <li class="sidebar-nav-overview">
-          عام
+          Übersicht
         </li>
       </ul>
 
@@ -314,18 +313,18 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">14</span>
-          <span class="site-state-item-name">المقالات</span>
+          <span class="site-state-item-name">Artikel</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
         <span class="site-state-item-count">11</span>
-        <span class="site-state-item-name">التصنيفات</span></a>
+        <span class="site-state-item-name">Kategorien</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
         <span class="site-state-item-count">25</span>
-        <span class="site-state-item-name">الوسوم</span></a>
+        <span class="site-state-item-name">schlagwörter</span></a>
       </div>
   </nav>
 </div>
@@ -357,7 +356,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">tmooming</span>
 </div>
-  <div class="powered-by">تطبيق الموقع <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
 
         

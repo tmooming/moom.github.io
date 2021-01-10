@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.3.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -26,14 +26,14 @@
 <meta property="og:url" content="http://www.turuwei.com/p/10010/index.html">
 <meta property="og:site_name" content="TuRuwei&#39;s Blog">
 <meta property="og:description" content="论win10安装.net 3.5有多难，试过的朋友都知道，今天我试了网上所有的方法，终于成功安装上了。 在此，记录一下，唯一一个成功的方法：  首先下载好win10的ios镜像文件，这个就是用于安装系统的（不懂的可以去搜索怎么安装win10系统）。 这是网址：https:&#x2F;&#x2F;www.microsoft.com&#x2F;zh-cn&#x2F;software-download&#x2F;windows10ISO  右键点击w">
+<meta property="og:locale">
 <meta property="og:image" content="http://www.turuwei.com/p/10010/image-20200413200026262.png">
 <meta property="og:image" content="http://www.turuwei.com/p/10010/image-20200413195237962.png">
 <meta property="article:published_time" content="2020-04-13T11:51:22.000Z">
 <meta property="article:modified_time" content="2020-04-13T12:04:02.043Z">
 <meta property="article:author" content="tmooming">
-<meta property="article:tag" content="win10">
-<meta property="article:tag" content="windows10">
-<meta property="article:tag" content=".net framework 3.5">
+<meta property="article:tag" content="windows">
+<meta property="article:tag" content=".Net">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://www.turuwei.com/p/10010/image-20200413200026262.png">
 
@@ -91,7 +91,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="تشغيل شريط التصفح">
+    <div class="toggle" aria-label="Navigationsleiste an/ausschalten">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -121,12 +121,12 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Startseite</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>الأرشيفات</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archiv</a>
 
   </li>
   </ul>
@@ -178,16 +178,16 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">نُشر في</span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
-              <time title="أُنشأ: 2020-04-13 19:51:22 / عُدل: 20:04:02" itemprop="dateCreated datePublished" datetime="2020-04-13T19:51:22+08:00">2020-04-13</time>
+              <time title="Erstellt: 2020-04-13 19:51:22 / Geändert am: 20:04:02" itemprop="dateCreated datePublished" datetime="2020-04-13T19:51:22+08:00">2020-04-13</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">في</span>
+              <span class="post-meta-item-text">in</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" itemprop="url" rel="index"><span itemprop="name">软件安装</span></a>
                 </span>
@@ -208,13 +208,13 @@
 <p>在此，记录一下，唯一一个成功的方法：</p>
 <ol>
 <li><p>首先下载好win10的ios镜像文件，这个就是用于安装系统的（不懂的可以去搜索怎么安装win10系统）。</p>
-<p>这是网址：<a href="https://www.microsoft.com/zh-cn/software-download/windows10ISO" target="_blank" rel="noopener">https://www.microsoft.com/zh-cn/software-download/windows10ISO</a></p>
+<p>这是网址：<a target="_blank" rel="noopener" href="https://www.microsoft.com/zh-cn/software-download/windows10ISO">https://www.microsoft.com/zh-cn/software-download/windows10ISO</a></p>
 </li>
 <li><p>右键点击win10原版镜像，依次选择 打开方式-windows资源管理器 ，记录出现的盘符，以便于后面的操作。</p>
 <p>其中 G、H、I盘是我的一U盘的三个分区，本来win10原版镜像是在我的G盘中。</p>
 <p><img src="/p/10010/image-20200413200026262.png" alt="image-20200413200026262"></p>
 </li>
-<li><p>以管理员身份运行命令提示符，输入以下命令行：<br>“<strong><em>dism.exe /online /enable-feature /featurename:netfx3 /Source:E:\sources\sxs\</em></strong>”<br>或者输入：“<strong><em>Dism.exe /online /enable-feature /featurename:NetFX3/all /Source:E:/sources/sxs /LimitAccess\</em></strong>”</p>
+<li><p>以管理员身份运行命令提示符，输入以下命令行：<br>“*<strong>dism.exe /online /enable-feature /featurename:netfx3 /Source:E:\sources\sxs*</strong>”<br>或者输入：“*<strong>Dism.exe /online /enable-feature /featurename:NetFX3/all /Source:E:/sources/sxs /LimitAccess*</strong>”</p>
 <p>我把E盘改成I盘就可以了</p>
 </li>
 </ol>
@@ -295,10 +295,10 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          المحتويات
+          Inhaltsverzeichnis
         </li>
         <li class="sidebar-nav-overview">
-          عام
+          Übersicht
         </li>
       </ul>
 
@@ -318,18 +318,18 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">14</span>
-          <span class="site-state-item-name">المقالات</span>
+          <span class="site-state-item-name">Artikel</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
         <span class="site-state-item-count">11</span>
-        <span class="site-state-item-name">التصنيفات</span></a>
+        <span class="site-state-item-name">Kategorien</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
         <span class="site-state-item-count">25</span>
-        <span class="site-state-item-name">الوسوم</span></a>
+        <span class="site-state-item-name">schlagwörter</span></a>
       </div>
   </nav>
 </div>
@@ -361,7 +361,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">tmooming</span>
 </div>
-  <div class="powered-by">تطبيق الموقع <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
 
         

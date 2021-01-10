@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 4.2.1">
+<meta name="generator" content="Hexo 5.3.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
@@ -26,6 +26,7 @@
 <meta property="og:url" content="http://www.turuwei.com/p/10009/index.html">
 <meta property="og:site_name" content="TuRuwei&#39;s Blog">
 <meta property="og:description" content="在ubuntu18.0.4上，通过构建虚拟环境安装pgadmin4">
+<meta property="og:locale">
 <meta property="og:image" content="http://www.turuwei.com/p/10009/small_apache_default.png">
 <meta property="og:image" content="http://www.turuwei.com/p/10009/pgadmin_login_blank.png">
 <meta property="article:published_time" content="2020-04-10T06:05:52.000Z">
@@ -33,8 +34,9 @@
 <meta property="article:author" content="tmooming">
 <meta property="article:tag" content="Ubuntu">
 <meta property="article:tag" content="pgadmin4">
-<meta property="article:tag" content="anaconda3">
+<meta property="article:tag" content="postgresql">
 <meta property="article:tag" content="apache">
+<meta property="article:tag" content="anaconda3">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://www.turuwei.com/p/10009/small_apache_default.png">
 
@@ -92,7 +94,7 @@
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
-    <div class="toggle" aria-label="تشغيل شريط التصفح">
+    <div class="toggle" aria-label="Navigationsleiste an/ausschalten">
       <span class="toggle-line toggle-line-first"></span>
       <span class="toggle-line toggle-line-middle"></span>
       <span class="toggle-line toggle-line-last"></span>
@@ -122,12 +124,12 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Startseite</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>الأرشيفات</a>
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archiv</a>
 
   </li>
   </ul>
@@ -179,16 +181,16 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-calendar"></i>
               </span>
-              <span class="post-meta-item-text">نُشر في</span>
+              <span class="post-meta-item-text">Veröffentlicht am</span>
               
 
-              <time title="أُنشأ: 2020-04-10 14:05:52 / عُدل: 15:08:29" itemprop="dateCreated datePublished" datetime="2020-04-10T14:05:52+08:00">2020-04-10</time>
+              <time title="Erstellt: 2020-04-10 14:05:52 / Geändert am: 15:08:29" itemprop="dateCreated datePublished" datetime="2020-04-10T14:05:52+08:00">2020-04-10</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
-              <span class="post-meta-item-text">في</span>
+              <span class="post-meta-item-text">in</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" itemprop="url" rel="index"><span itemprop="name">软件安装</span></a>
                 </span>
@@ -208,10 +210,9 @@
       
         <p><strong>首先，安装的方法千千万，适合自己的没几个</strong></p>
 <p>我主要是按照这个流程安装的，主要记录一下其中遇到的问题。</p>
-<p> <a href="https://www.digitalocean.com/community/tutorials/how-to-install-configure-pgadmin4-server-mode" target="_blank" rel="noopener">https://www.digitalocean.com/community/tutorials/how-to-install-configure-pgadmin4-server-mode</a></p>
+<p> <a target="_blank" rel="noopener" href="https://www.digitalocean.com/community/tutorials/how-to-install-configure-pgadmin4-server-mode">https://www.digitalocean.com/community/tutorials/how-to-install-configure-pgadmin4-server-mode</a></p>
 <h3 id="第一步：安装apache2"><a href="#第一步：安装apache2" class="headerlink" title="第一步：安装apache2"></a>第一步：安装apache2</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update</span><br><span class="line">sudo apt install apache2</span><br><span class="line">sudo ufw app list  # 这一步其实可以跳过，只要是安装成功了，这个肯定能符合</span><br><span class="line">sudo ufw allow &#39;Apache&#39;</span><br><span class="line">sudo ufw status  # 不放心的话，可以看看</span><br><span class="line">sudo systemctl status apache2  # 这个还是看看的好</span><br></pre></td></tr></table></figure>
-
-<p>安装完成apache后，就可以通过<a href="http://your_server_ip访问自己的主页了。" target="_blank" rel="noopener">http://your_server_ip访问自己的主页了。</a></p>
+<p>安装完成apache后，就可以通过<a target="_blank" rel="noopener" href="http://your_server_ip访问自己的主页了./">http://your_server_ip访问自己的主页了。</a></p>
 <p>（注，通过[ hostname -I ]命令可以获取自己本机ip地址）</p>
 <p><img src="/p/10009/small_apache_default.png" alt="Apache default page"></p>
 <p>其他的就不用设置了。</p>
@@ -219,61 +220,44 @@
 <p>唯一需要注意的一点是，在激活虚拟环境后，怎么看当前的python路径，这个也是后面需要用到的（我就是在这个地方卡了很久）</p>
 <p>我只推荐一个方法：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 首先在终端输入python，进入命令行模式</span></span><br><span class="line">&gt;&gt; <span class="keyword">import</span> sys </span><br><span class="line">&gt;&gt; pathn = sys.executable</span><br><span class="line">&gt;&gt; print(path)</span><br></pre></td></tr></table></figure>
-
 <p>这个目录需要记住</p>
 <h3 id="第三步：安装postgresql12"><a href="#第三步：安装postgresql12" class="headerlink" title="第三步：安装postgresql12"></a>第三步：安装postgresql12</h3><p>这个我试了好几个方法，源码安装还是不推荐，太繁琐，还容易出错（我承认我没成功）。</p>
 <p>所以还是用最简单的方法吧。</p>
 <p>首先，先掌握一下，怎么彻底删除软件：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove --purge 软件名称  </span><br><span class="line">sudo apt-get autoremove --purge 软件名称 </span><br><span class="line">dpkg -l |grep ^rc|awk '&#123;print $2&#125;' |sudo xargs dpkg -P  # 清理残留数据</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove --purge 软件名称  </span><br><span class="line">sudo apt-get autoremove --purge 软件名称 </span><br><span class="line">dpkg -l |grep ^rc|awk &#x27;&#123;print $2&#125;&#x27; |sudo xargs dpkg -P  # 清理残留数据</span><br></pre></td></tr></table></figure>
 <p>只有学会了娴熟的卸载软件，才能在安装失败后重新安装。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install postgresql  # 现在能自动安装postgresql 12了</span><br><span class="line"><span class="meta">#</span><span class="bash"> sudo apt-get install postgresql-12 <span class="comment"># 太坑，不要指定版本安装</span></span></span><br></pre></td></tr></table></figure>
-
 <p>在失败了一天后，我就是通过上述两个命令，安装成功了。。。。</p>
 <h3 id="第四步：安装pgadmin4"><a href="#第四步：安装pgadmin4" class="headerlink" title="第四步：安装pgadmin4"></a>第四步：安装pgadmin4</h3><p>最重要的一步来了！！！！</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update  # 没事就update一下</span><br><span class="line">sudo apt install libgmp3-dev libpq-dev libapache2-mod-wsgi-py3  # 一定要安装</span><br><span class="line">sudo mkdir -p /var/lib/pgadmin4/sessions</span><br><span class="line">sudo mkdir /var/lib/pgadmin4/storage</span><br><span class="line">sudo mkdir /var/log/pgadmin4</span><br><span class="line">sudo chown -R 用户名:用户名 /var/lib/pgadmin4  # 为了保持一致，我推荐用postgres</span><br><span class="line">sudo chown -R 用户名:用户名 /var/log/pgadmin4</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo apt update  # 没事就update一下</span><br><span class="line">sudo apt install libgmp3-dev libpq-dev libapache2-mod-wsgi-py3  # 一定要安装</span><br><span class="line">sudo mkdir -p /var/lib/pgadmin4/sessions</span><br><span class="line">sudo mkdir /var/lib/pgadmin4/storage</span><br><span class="line">sudo mkdir /var/log/pgadmin4</span><br><span class="line">sudo chown -R 用户名:用户名 /var/lib/pgadmin4  # 为了保持一致，我推荐用postgres</span><br><span class="line">sudo chown -R 用户名:用户名 /var/log/pgadmin4</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>然后后面的就和我看到的教程不一样了，因为我用的conda，我在网上看到的虚拟环境，全都是用pyvenv或者其他的。</p>
 <p>首先，我使用的虚拟环境，就是conda自带的base，没有使用自己新建的。</p>
 <p>然后，接着来</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi anaconda3/lib/python3.7/site-packages/pgadmin4/config_local.py  # 我推荐用vim编辑，nano太花，然后，因为我是用默认的虚拟环境base，所以直接是anaconda3/lib,如果是自建的虚拟环境，一般就是anaconda3/envs/名字/lib。。。</span><br></pre></td></tr></table></figure>
-
 <p>插入内容：</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">LOG_FILE = '/var/log/pgadmin4/pgadmin4.log'  # 这定义了pgAdmin日志将存储在其中的文件。</span><br><span class="line">SQLITE_PATH = '/var/lib/pgadmin4/pgadmin4.db'  # pgAdmin将与用户相关的数据存储在SQLite数据库中，该指令将pgAdmin软件指向此配置数据库。由于此文件位于永久目录下/var/lib/pgadmin4/，因此升级后用户数据不会丢失。</span><br><span class="line">SESSION_DB_PATH = '/var/lib/pgadmin4/sessions' # 指定将用于存储会话数据的目录。</span><br><span class="line">STORAGE_DIR = '/var/lib/pgadmin4/storage' # 定义pgAdmin将在何处存储其他数据，例如备份和安全证书。</span><br><span class="line">SERVER_MODE = True  # 设置此伪指令以True告诉pgAdmin在服务器模式下运行，而不是在桌面模式下运行。</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">LOG_FILE = &#x27;/var/log/pgadmin4/pgadmin4.log&#x27;  # 这定义了pgAdmin日志将存储在其中的文件。</span><br><span class="line">SQLITE_PATH = &#x27;/var/lib/pgadmin4/pgadmin4.db&#x27;  # pgAdmin将与用户相关的数据存储在SQLite数据库中，该指令将pgAdmin软件指向此配置数据库。由于此文件位于永久目录下/var/lib/pgadmin4/，因此升级后用户数据不会丢失。</span><br><span class="line">SESSION_DB_PATH = &#x27;/var/lib/pgadmin4/sessions&#x27; # 指定将用于存储会话数据的目录。</span><br><span class="line">STORAGE_DIR = &#x27;/var/lib/pgadmin4/storage&#x27; # 定义pgAdmin将在何处存储其他数据，例如备份和安全证书。</span><br><span class="line">SERVER_MODE = True  # 设置此伪指令以True告诉pgAdmin在服务器模式下运行，而不是在桌面模式下运行。</span><br></pre></td></tr></table></figure>
 <p>然后，开始安装pgadmin4:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python my_env/lib/python3.6/site-packages/pgadmin4/setup.py  # 在这一步，很可能因为版本冲突而报错，我遇到了no model name 'sqlalchemy.dialects.postgresql'的错误，网上也没看到解决办法，我选择了先卸载（1.3.X版本），再安装低版本（1.2.x版本），就没事了，其他的模块错误，都是如此</span><br><span class="line">conda list sqlalchemy  # 查看conda中可供安装的不同版本，默认安装都是最新的</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">python my_env/lib/python3.6/site-packages/pgadmin4/setup.py  # 在这一步，很可能因为版本冲突而报错，我遇到了no model name &#x27;sqlalchemy.dialects.postgresql&#x27;的错误，网上也没看到解决办法，我选择了先卸载（1.3.X版本），再安装低版本（1.2.x版本），就没事了，其他的模块错误，都是如此</span><br><span class="line">conda list sqlalchemy  # 查看conda中可供安装的不同版本，默认安装都是最新的</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Output</span><br><span class="line">. . .</span><br><span class="line">Enter the email address and password to use for the initial pgAdmin user account:</span><br><span class="line"></span><br><span class="line">Email address: postgres@postgres.com   # 随便输入</span><br><span class="line">Password: </span><br><span class="line">Retype password:</span><br></pre></td></tr></table></figure>
-
 <p>之后，停用虚拟环境：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda deactivate</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 调用您在config_local.py文件中指定的文件路径。这些文件保存在您在步骤1中创建的目录中，这些目录当前由您的非root用户拥有。但是，运行Web服务器的用户和组必须可以访问它们。在Ubuntu 18.04上，默认情况下，这些是www-data用户和组，因此请更新以下目录的权限，以对这两个目录都具有www-data所有权：</span></span><br><span class="line">sudo chown -R www-data:www-data /var/lib/pgadmin4/ </span><br><span class="line">sudo chown -R www-data:www-data /var/log/pgadmin4/</span><br></pre></td></tr></table></figure>
-
 <p>然后，配置apache</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 在/sites-available/目录中创建一个新文件pgadmin4.conf。这将是服务器的虚拟主机文件：</span></span><br><span class="line">sudo vi /etc/apache2/sites-available/pgadmin4.conf</span><br></pre></td></tr></table></figure>
-
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash"> 在/sites-available/目录中创建一个新文件pgadmin4.conf。这将是服务器的虚拟主机文件：</span></span><br><span class="line">sudo vi /etc/apache2/sites-available/pgadmin4.conf  </span><br></pre></td></tr></table></figure>
 <p><strong>重点来了</strong></p>
 <p>教程中给出的内容是：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;VirtualHost *&gt;</span><br><span class="line">    ServerName your_server_ip</span><br><span class="line"></span><br><span class="line">    WSGIDaemonProcess pgadmin processes&#x3D;1 threads&#x3D;25 python-path&#x3D;&#x2F;home&#x2F;ubuntu&#x2F;anaconda3&#x2F;bin&#x2F;python  #这是我的,应该改成之前输出的python路径</span><br><span class="line">    </span><br><span class="line">    WSGIScriptAlias &#x2F; &#x2F;home&#x2F;ubuntu&#x2F;anaconda3&#x2F;lib&#x2F;python3.6&#x2F;site-packages&#x2F;pgadmin4&#x2F;pgAdmin4.wsgi</span><br><span class="line"></span><br><span class="line">    &lt;Directory &quot;&#x2F;home&#x2F;ubuntu&#x2F;anaconda3&#x2F;lib&#x2F;python3.6&#x2F;site-packages&#x2F;pgadmin4&#x2F;&quot;&gt;</span><br><span class="line">        WSGIProcessGroup pgadmin</span><br><span class="line">        WSGIApplicationGroup %&#123;GLOBAL&#125;</span><br><span class="line">        Require all granted</span><br><span class="line">    &lt;&#x2F;Directory&gt;</span><br><span class="line">&lt;&#x2F;VirtualHost&gt;</span><br></pre></td></tr></table></figure>
-
 <p>保存并关闭虚拟主机文件。接下来，使用<code>a2dissite</code>脚本禁用默认虚拟主机文件<code>000-default.conf</code>：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo a2dissite 000-default.conf</span><br><span class="line">sudo a2ensite pgadmin4.conf  # 然后使用a2ensite脚本启用您的pgadmin4.conf虚拟主机文件。这将创建从/sites-available/目录中的虚拟主机文件到目录的符号链接/sites-enabled/：</span><br></pre></td></tr></table></figure>
-
 <p>然后，测试配置文件的语法是否正确：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">apachectl configtest</span><br></pre></td></tr></table></figure>
-
 <p>如果您的配置文件全部正常，您将看到<code>Syntax OK</code>。</p>
 <p>如果出现错误：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AH00526: Syntax error on line 1 of &#x2F;etc&#x2F;apache2&#x2F;sites-enabled&#x2F;pgadmin4.conf:</span><br><span class="line">Name duplicates previous WSGI daemon definition.</span><br><span class="line">Action &#39;configtest&#39; failed.</span><br><span class="line">The Apache error log may have more information.</span><br></pre></td></tr></table></figure>
-
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo a2enmod wsgi  # 用这个命令启动wsgi，启动失败就是wsgi没装上</span><br></pre></td></tr></table></figure>
-
 <p>最后一步：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo systemctl restart apache2</span><br></pre></td></tr></table></figure>
-
-<h3 id="访问pgAdmin"><a href="#访问pgAdmin" class="headerlink" title="访问pgAdmin"></a>访问pgAdmin</h3><p>在本地计算机上，打开首选的Web浏览器，然后导航到服务器的IP地址：<a href="http://your_server_ip" target="_blank" rel="noopener">http://your_server_ip</a></p>
+<h3 id="访问pgAdmin"><a href="#访问pgAdmin" class="headerlink" title="访问pgAdmin"></a>访问pgAdmin</h3><p>在本地计算机上，打开首选的Web浏览器，然后导航到服务器的IP地址：<a target="_blank" rel="noopener" href="http://your_server_ip/">http://your_server_ip</a></p>
 <p><img src="/p/10009/pgadmin_login_blank.png" alt="pgAdmin登录屏幕"></p>
 
     </div>
@@ -353,16 +337,16 @@
 
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
-          المحتويات
+          Inhaltsverzeichnis
         </li>
         <li class="sidebar-nav-overview">
-          عام
+          Übersicht
         </li>
       </ul>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步：安装apache2"><span class="nav-number">1.</span> <span class="nav-text">第一步：安装apache2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步：安装anaconda3"><span class="nav-number">2.</span> <span class="nav-text">第二步：安装anaconda3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三步：安装postgresql12"><span class="nav-number">3.</span> <span class="nav-text">第三步：安装postgresql12</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四步：安装pgadmin4"><span class="nav-number">4.</span> <span class="nav-text">第四步：安装pgadmin4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#访问pgAdmin"><span class="nav-number">5.</span> <span class="nav-text">访问pgAdmin</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E6%AD%A5%EF%BC%9A%E5%AE%89%E8%A3%85apache2"><span class="nav-number">1.</span> <span class="nav-text">第一步：安装apache2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E6%AD%A5%EF%BC%9A%E5%AE%89%E8%A3%85anaconda3"><span class="nav-number">2.</span> <span class="nav-text">第二步：安装anaconda3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%AD%A5%EF%BC%9A%E5%AE%89%E8%A3%85postgresql12"><span class="nav-number">3.</span> <span class="nav-text">第三步：安装postgresql12</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E5%9B%9B%E6%AD%A5%EF%BC%9A%E5%AE%89%E8%A3%85pgadmin4"><span class="nav-number">4.</span> <span class="nav-text">第四步：安装pgadmin4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AEpgAdmin"><span class="nav-number">5.</span> <span class="nav-text">访问pgAdmin</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -377,18 +361,18 @@
           <a href="/archives/">
         
           <span class="site-state-item-count">14</span>
-          <span class="site-state-item-name">المقالات</span>
+          <span class="site-state-item-name">Artikel</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
         <span class="site-state-item-count">11</span>
-        <span class="site-state-item-name">التصنيفات</span></a>
+        <span class="site-state-item-name">Kategorien</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
         <span class="site-state-item-count">25</span>
-        <span class="site-state-item-name">الوسوم</span></a>
+        <span class="site-state-item-name">schlagwörter</span></a>
       </div>
   </nav>
 </div>
@@ -420,7 +404,7 @@
   </span>
   <span class="author" itemprop="copyrightHolder">tmooming</span>
 </div>
-  <div class="powered-by">تطبيق الموقع <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
+  <div class="powered-by">Erstellt mit  <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://muse.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a>
   </div>
 
         
