@@ -10,5 +10,6 @@ Disallow: /fonts/
 Disallow: /vendors/
 Disallow: /fancybox/
 
+Sitemap: https://www.turuwei.com/search.xml
 Sitemap: https://www.turuwei.com/sitemap.xml
 Sitemap: https://www.turuwei.com/baidusitemap.xml
