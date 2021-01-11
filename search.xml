@@ -96,7 +96,7 @@
 <li><p>删除pycharm文件夹</p>
 </li>
 <li><p>删除 .pycharm文件，这个文件是在<strong>当前用户</strong>的家目录下：</p>
-<p><img src="image-20200408093746643.png" alt=".PyCharm文件位置"></p>
+<p><img src="/p/10008/image-20200408093746643.png" alt=".PyCharm文件位置"></p>
 </li>
 </ul>
 </li>
@@ -108,18 +108,18 @@
 <p>（其他版本的安装补丁也是可以的）</p>
 </li>
 <li><p><strong>安装完成启的IDE，如果上来就需要注册，选择：试用（Evaluate for free）进入IDE。</strong></p>
-<p><img src="LuuSIJ1HOJ89wWIX.png" alt="选择**Evaluate for free**"></p>
+<p><img src="/p/10008/LuuSIJ1HOJ89wWIX.png" alt="选择**Evaluate for free**"></p>
 </li>
 <li><p><strong>将 jetbrains-agent-latest.zip拖进下面IDE窗口，点 “Restart” 按钮重启IDE。</strong></p>
-<p><img src="hH6pRfYFLFAeePVp.png" alt="拖入"></p>
+<p><img src="/p/10008/hH6pRfYFLFAeePVp.png" alt="拖入"></p>
 <p>如果已经打开项目，直接将 jetbrains-agent-latest.zip包拖到代码区，即可</p>
-<p><img src="image-20200408094923358.png" alt="拖入到代码区"></p>
+<p><img src="/p/10008/image-20200408094923358.png" alt="拖入到代码区"></p>
 </li>
 <li><p><strong>在弹出的JetbrainsAgent Helper对话框中，选择激活方式，点击安装按钮，**</strong>网络不好，建议勾选我无法访问外网。**</p>
-<p><img src="image-20200408095309849.png"></p>
+<p><img src="/p/10008/image-20200408095309849.png"></p>
 </li>
 <li><p><strong>重启IDE，在Help—&gt;about中查看是否激活。</strong></p>
-<p><img src="UKbfjpMtLuQKVRIT.png" alt="激活完成"></p>
+<p><img src="/p/10008/UKbfjpMtLuQKVRIT.png" alt="激活完成"></p>
 </li>
 </ol>
 ]]></content>
@@ -158,7 +158,7 @@
 <p>或者是另一种错误：</p>
 <figure class="highlight livecodeserver"><table><tr><td class="code"><pre><span class="line">image operating <span class="keyword">system</span> <span class="string">&quot;linux&quot;</span> cannot be used <span class="keyword">on</span> <span class="title">this</span> <span class="title">platform</span></span><br></pre></td></tr></table></figure>
 <p>都是同一种解决方案：设置daemon.json的experimental:true</p>
-<p><img src="20200106010842.png" alt="Daemon设置"></p>
+<p><img src="/p/10005/20200106010842.png" alt="Daemon设置"></p>
 ]]></content>
       <categories>
         <category>Bug</category>
@@ -223,7 +223,7 @@
 <h3 id="第一步：安装apache2"><a href="#第一步：安装apache2" class="headerlink" title="第一步：安装apache2"></a>第一步：安装apache2</h3><figure class="highlight nginx"><table><tr><td class="code"><pre><span class="line"><span class="attribute">sudo</span> apt update</span><br><span class="line">sudo apt install apache2</span><br><span class="line">sudo ufw app list  <span class="comment"># 这一步其实可以跳过，只要是安装成功了，这个肯定能符合</span></span><br><span class="line">sudo ufw allow <span class="string">&#x27;Apache&#x27;</span></span><br><span class="line">sudo ufw status  <span class="comment"># 不放心的话，可以看看</span></span><br><span class="line">sudo systemctl status apache2  <span class="comment"># 这个还是看看的好</span></span><br></pre></td></tr></table></figure>
 <p>安装完成apache后，就可以通过<a href="http://your_server_ip访问自己的主页了./">http://your_server_ip访问自己的主页了。</a></p>
 <p>（注，通过[ hostname -I ]命令可以获取自己本机ip地址）</p>
-<p><img src="small_apache_default.png" alt="Apache default page"></p>
+<p><img src="/p/10009/small_apache_default.png" alt="Apache default page"></p>
 <p>其他的就不用设置了。</p>
 <h3 id="第二步：安装anaconda3"><a href="#第二步：安装anaconda3" class="headerlink" title="第二步：安装anaconda3"></a>第二步：安装anaconda3</h3><p>安装过程就跳过了。</p>
 <p>唯一需要注意的一点是，在激活虚拟环境后，怎么看当前的python路径，这个也是后面需要用到的（我就是在这个地方卡了很久）</p>
@@ -267,7 +267,7 @@
 <p>最后一步：</p>
 <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">sudo systemctl restart apache2</span><br></pre></td></tr></table></figure>
 <h3 id="访问pgAdmin"><a href="#访问pgAdmin" class="headerlink" title="访问pgAdmin"></a>访问pgAdmin</h3><p>在本地计算机上，打开首选的Web浏览器，然后导航到服务器的IP地址：<a href="http://your_server_ip/">http://your_server_ip</a></p>
-<p><img src="pgadmin_login_blank.png" alt="pgAdmin登录屏幕"></p>
+<p><img src="/p/10009/pgadmin_login_blank.png" alt="pgAdmin登录屏幕"></p>
 ]]></content>
       <categories>
         <category>软件安装</category>
@@ -291,13 +291,15 @@
 </li>
 <li><p>右键点击win10原版镜像，依次选择 打开方式-windows资源管理器 ，记录出现的盘符，以便于后面的操作。</p>
 <p>其中 G、H、I盘是我的一U盘的三个分区，本来win10原版镜像是在我的G盘中。</p>
-<p><img src="image-20200413200026262.png" alt="image-20200413200026262"></p>
 </li>
+</ol>
+<p>   <img src="/p/10010/image-20200413200026262.png" alt="image-20200413200026262"></p>
+<ol start="3">
 <li><p>以管理员身份运行命令提示符，输入以下命令行：<br>“*<strong>dism.exe /online /enable-feature /featurename:netfx3 /Source:E:\sources\sxs*</strong>”<br>或者输入：“*<strong>Dism.exe /online /enable-feature /featurename:NetFX3/all /Source:E:/sources/sxs /LimitAccess*</strong>”</p>
 <p>我把E盘改成I盘就可以了</p>
 </li>
 </ol>
-<p><img src="image-20200413195237962.png" alt="image-20200413195237962"></p>
+<p><img src="/p/10010/image-20200413195237962.png" alt="image-20200413195237962"></p>
 <p><strong>困扰已久的问题终于解决了！！</strong></p>
 ]]></content>
       <categories>
@@ -322,7 +324,7 @@
 <p><strong>难点</strong>：歧义识别 和 新词识别。 eg：“羽毛球拍卖完了”，这个可以切分成“羽毛 球拍 卖 完 了”，也可切分成“羽毛球 拍卖 完 了”—&gt;上下文信息</p>
 <h3 id="3-词性标注"><a href="#3-词性标注" class="headerlink" title="3. 词性标注"></a>3. 词性标注</h3><p><strong>词性标注</strong>：对每个词或词语打词类标签，是一个经典的序列标注问题。eg：形容词、动词、名词等。有助于在后面的处理中融入更多有用的语言信息。</p>
 <p><strong>词性标注不是非必需的。</strong>比如，常见的文本分类就不用关心词性问题，但是类似情感分析、知识推理却是需要的，下图是常见的中文词性整理。</p>
-<p><img src="20190306172401951.png" alt="词性编码"></p>
+<p><img src="/p/10004/20190306172401951.png" alt="词性编码"></p>
 <p><strong>常见方法</strong>：基于规则和基于统计的方法。</p>
 <ul>
 <li>基于统计的方法：基于最大熵的词性标注、基于统计最大概率输出词性、基于 HMM、CRF+BiLSTM 的词性标注。</li>
