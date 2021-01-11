@@ -362,7 +362,7 @@
     <script>
         var now = new Date();
         function createtime() {
-            var grt= new Date("01/01/2021 00:00:00");
+            var grt= new Date("01/01/2020 00:00:00");
             now.setTime(now.getTime()+250);
             days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days);
             hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours);
@@ -466,6 +466,35 @@
   
 
   
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('https://cdn.jsdelivr.net/npm/valine@1.4.14/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'G8l8fYYswIllfITfbLbKxxiS-gzGzoHsz',
+      appKey     : 'ccAz1rmxE4kzTn8gVs7b4SJh',
+      placeholder: "欢迎畅所欲言",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
 
 </body>
 </html>
