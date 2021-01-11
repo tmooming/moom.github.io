@@ -270,14 +270,14 @@
   </url>
   
   <url>
-    <loc>http://www.turuwei.com/tags/%E8%AF%AD%E6%B3%95/</loc>
+    <loc>http://www.turuwei.com/tags/Python/</loc>
     <lastmod>2021-01-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
-    <loc>http://www.turuwei.com/tags/Python/</loc>
+    <loc>http://www.turuwei.com/tags/%E8%AF%AD%E6%B3%95/</loc>
     <lastmod>2021-01-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
@@ -377,6 +377,13 @@
   </url>
   
   <url>
+    <loc>http://www.turuwei.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2021-01-11</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>http://www.turuwei.com/categories/%E8%93%84%E6%B0%B4%E6%B1%A0%E6%8A%BD%E6%A0%B7/</loc>
     <lastmod>2021-01-11</lastmod>
     <changefreq>daily</changefreq>
@@ -385,13 +392,6 @@
   
   <url>
     <loc>http://www.turuwei.com/categories/Bert/</loc>
-    <lastmod>2021-01-11</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://www.turuwei.com/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2021-01-11</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>

@@ -169,6 +169,19 @@
       </tags>
   </entry>
   <entry>
+    <title>python字符串形式的列表转列表</title>
+    <url>/p/10011/</url>
+    <content><![CDATA[<p>每次要将str转换为list时都忘记了方法名，遂记录一下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 例如 a = &#x27;[&#x27;b&#x27;,&#x27;cc&#x27;,&#x27;d&#x27;]&#x27;</span></span><br><span class="line">str2list = ast.literal_eval(a)</span><br><span class="line"><span class="comment"># out put: [&#x27;b&#x27;,&#x27;cc&#x27;,&#x27;d&#x27;]</span></span><br><span class="line"><span class="comment"># 其他方法都不靠谱</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>格式转换</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>python中yield用法解析</title>
     <url>/p/10001/</url>
     <content><![CDATA[<p><strong>直接上例子：</strong></p>
@@ -199,19 +212,6 @@
       </categories>
       <tags>
         <tag>语法</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>python字符串形式的列表转列表</title>
-    <url>/p/10011/</url>
-    <content><![CDATA[<p>每次要将str转换为list时都忘记了方法名，遂记录一下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 例如 a = &#x27;[&#x27;b&#x27;,&#x27;cc&#x27;,&#x27;d&#x27;]&#x27;</span></span><br><span class="line">str2list = ast.literal_eval(a)</span><br><span class="line"><span class="comment"># out put: [&#x27;b&#x27;,&#x27;cc&#x27;,&#x27;d&#x27;]</span></span><br><span class="line"><span class="comment"># 其他方法都不靠谱</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>格式转换</category>
-      </categories>
-      <tags>
-        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -391,6 +391,18 @@
       </tags>
   </entry>
   <entry>
+    <title>生有涯而知无涯</title>
+    <url>/p/10000/</url>
+    <content><![CDATA[<p>吾生也有涯，而知也无涯。以有涯随无涯，殆已！已而为知者，殆而已矣！为善无近名，为恶无近刑，缘督以为经，可以保身，可以全生，可以养亲，可以尽年。</p>
+]]></content>
+      <categories>
+        <category>读书笔记</category>
+      </categories>
+      <tags>
+        <tag>随笔</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>如何在无限序列中随机抽取元素</title>
     <url>/p/10012/</url>
     <content><![CDATA[<p><strong>问题：在一个无限的整数数据流，如何从中等概率随机抽取 k 个整数出来？</strong></p>
@@ -439,18 +451,6 @@
       </categories>
       <tags>
         <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>生有涯而知无涯</title>
-    <url>/p/10000/</url>
-    <content><![CDATA[<p>吾生也有涯，而知也无涯。以有涯随无涯，殆已！已而为知者，殆而已矣！为善无近名，为恶无近刑，缘督以为经，可以保身，可以全生，可以养亲，可以尽年。</p>
-]]></content>
-      <categories>
-        <category>读书笔记</category>
-      </categories>
-      <tags>
-        <tag>随笔</tag>
       </tags>
   </entry>
 </search>
