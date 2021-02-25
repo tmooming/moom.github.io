@@ -454,9 +454,7 @@
   <entry>
     <title>《神经网络与机器学习》笔记（一）</title>
     <url>/p/10014/</url>
-    <content><![CDATA[<h1 id="《神经网络与深度学习》笔记"><a href="#《神经网络与深度学习》笔记" class="headerlink" title="《神经网络与深度学习》笔记"></a>《神经网络与深度学习》笔记</h1><p><img src="https://upload-images.jianshu.io/upload_images/16788405-92f59abf85a514b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="本书组织架构"></p>
-<p>​                                         </p>
-<h2 id="入门篇"><a href="#入门篇" class="headerlink" title="入门篇"></a>入门篇</h2><hr>
+    <content><![CDATA[<h2 id="入门篇"><a href="#入门篇" class="headerlink" title="入门篇"></a>入门篇</h2><hr>
 <h3 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章  绪论"></a>第一章  绪论</h3><h4 id="特征表示方法"><a href="#特征表示方法" class="headerlink" title="特征表示方法"></a>特征表示方法</h4><p><strong>局部特征</strong></p>
 <blockquote>
 <p>含义：也称为<em>离散表示</em>或<em>符号表示</em>，通常是用one-hot向量的形式</p>
@@ -553,8 +551,7 @@
 <p>为解决对样本顺序的依赖问题，提出了参数平均感知器。</p>
 <p>同时，将感知器在多分类上进行扩展，可以得到广义感知器。</p>
 <h4 id="支持向量机"><a href="#支持向量机" class="headerlink" title="支持向量机"></a>支持向量机</h4><p>参照《西瓜书》</p>
-<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p><img src="https://upload-images.jianshu.io/upload_images/16788405-e5d2f2987df593e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
-]]></content>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p><img src="https://upload-images.jianshu.io/upload_images/16788405-e5d2f2987df593e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>]]></content>
       <categories>
         <category>读书笔记</category>
       </categories>
