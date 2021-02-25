@@ -454,8 +454,8 @@
   <entry>
     <title>《神经网络与机器学习》笔记（一）</title>
     <url>/p/10014/</url>
-    <content><![CDATA[<p><img src="https://upload-images.jianshu.io/upload_images/16788405-92f59abf85a514b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="本书组织架构"></p>
-<a id="more"></a>                                      
+    <content><![CDATA[<p><img data-src="https://upload-images.jianshu.io/upload_images/16788405-92f59abf85a514b8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="本书组织架构"></p>
+<span id="more"></span>                                      
 
 <h2 id="入门篇"><a href="#入门篇" class="headerlink" title="入门篇"></a>入门篇</h2><hr>
 <h3 id="第一章-绪论"><a href="#第一章-绪论" class="headerlink" title="第一章  绪论"></a>第一章  绪论</h3><h4 id="特征表示方法"><a href="#特征表示方法" class="headerlink" title="特征表示方法"></a>特征表示方法</h4><p><strong>局部特征</strong></p>
@@ -486,7 +486,7 @@
 <li>解释性不强</li>
 </ol>
 </blockquote>
-<p><img src="https://upload-images.jianshu.io/upload_images/16788405-cf9da67b4d70e5b4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="深度学习需要解释的问题是：贡献度分配问题
+<p><img data-src="https://upload-images.jianshu.io/upload_images/16788405-cf9da67b4d70e5b4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="深度学习需要解释的问题是：贡献度分配问题
 "></p>
 <p>​                                                      </p>
 <h3 id="第二章-机器学习概述"><a href="#第二章-机器学习概述" class="headerlink" title="第二章  机器学习概述"></a>第二章  机器学习概述</h3><p><strong>损失函数</strong></p>
@@ -536,7 +536,7 @@
 </li>
 </ol>
 <p>“一对其余”方式和“一对一”方式都存在一个缺陷：特征空间中会存在一些 难以确定类别的区域，而“argmax”方式很好地解决了这个问题：</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/16788405-5ebc8d85449e6e4d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
+<p><img data-src="https://upload-images.jianshu.io/upload_images/16788405-5ebc8d85449e6e4d.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
 </blockquote>
 <h4 id="Logistic-回归"><a href="#Logistic-回归" class="headerlink" title="Logistic 回归"></a>Logistic 回归</h4><p>是一种常用的处理二分类问题的线性模型。</p>
 <p>为了解决连续的线性函数不适合进行分类的问题，我们引入非线性函数$$g:\mathbb{R}^d\rightarrow(0,1)$$来预测类别标签的后验概率p(y = 1|x)。$$p(y=1|x)=g(f(x;w))$$。</p>
@@ -554,7 +554,7 @@
 <p>为解决对样本顺序的依赖问题，提出了参数平均感知器。</p>
 <p>同时，将感知器在多分类上进行扩展，可以得到广义感知器。</p>
 <h4 id="支持向量机"><a href="#支持向量机" class="headerlink" title="支持向量机"></a>支持向量机</h4><p>参照《西瓜书》</p>
-<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p><img src="https://upload-images.jianshu.io/upload_images/16788405-e5d2f2987df593e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
+<h4 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h4><p><img data-src="https://upload-images.jianshu.io/upload_images/16788405-e5d2f2987df593e0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240"></p>
 ]]></content>
       <categories>
         <category>读书笔记</category>
