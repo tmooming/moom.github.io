@@ -592,4 +592,16 @@ W_{t+1} \leftarrow W_{t}+\alpha\left(\frac{1}{N} \sum_{n=1}^{N} x^{(n)}\left(y^{
         <tag>深度学习</tag>
       </tags>
   </entry>
+  <entry>
+    <title>dict转dataframe</title>
+    <url>/p/10015/</url>
+    <content><![CDATA[<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment"># 如 res = &#123;&#x27;001&#x27;:22,&#x27;002&#x27;:33&#125;</span></span><br><span class="line">dicts = pd.DataFrame(pd.Series(res),columns=[<span class="string">&#x27;频次&#x27;</span>])</span><br><span class="line">dicts = dicts.reset_index().rename(columns=&#123;<span class="string">&#x27;index&#x27;</span>:<span class="string">&#x27;id&#x27;</span>&#125;)</span><br><span class="line">dicts.head()</span><br><span class="line"><span class="comment">#    id   频次</span></span><br><span class="line"><span class="comment"># 0  001  22</span></span><br><span class="line"><span class="comment"># 1  002  33</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>格式转换</category>
+      </categories>
+      <tags>
+        <tag>Python</tag>
+      </tags>
+  </entry>
 </search>

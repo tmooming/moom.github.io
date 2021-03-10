@@ -6,7 +6,7 @@
   <link href="http://www.turuwei.com/atom.xml" rel="self"/>
   
   <link href="http://www.turuwei.com/"/>
-  <updated>2021-02-25T08:23:57.465Z</updated>
+  <updated>2021-03-10T03:15:11.373Z</updated>
   <id>http://www.turuwei.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>dict转dataframe</title>
+    <link href="http://www.turuwei.com/p/10015/"/>
+    <id>http://www.turuwei.com/p/10015/</id>
+    <published>2021-03-10T03:10:36.000Z</published>
+    <updated>2021-03-10T03:15:11.373Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 如 res = &#123;&#x27;001&#x27;:22,&#x27;002&#x27;:33&#125;</span></span><br><span class="line">dicts = pd.DataFrame(pd.Series(res),columns=[<span class="string">&#x27;频次&#x27;</span>])</span><br><span class="line">dicts = dicts.reset_index().rename(columns=&#123;<span class="string">&#x27;index&#x27;</span>:<span class="string">&#x27;id&#x27;</span>&#125;)</span><br><span class="line">dicts.head()</span><br><span class="line"><span class="comment">#    id   频次</span></span><br><span class="line"><span class="comment"># 0  001  22</span></span><br><span class="line"><span class="comment"># 1  002  33</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span clas</summary>
+      
+    
+    
+    
+    <category term="格式转换" scheme="http://www.turuwei.com/categories/%E6%A0%BC%E5%BC%8F%E8%BD%AC%E6%8D%A2/"/>
+    
+    
+    <category term="Python" scheme="http://www.turuwei.com/tags/Python/"/>
+    
+  </entry>
   
   <entry>
     <title>《神经网络与机器学习》笔记（一）</title>
