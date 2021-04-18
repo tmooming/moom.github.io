@@ -604,4 +604,28 @@ W_{t+1} \leftarrow W_{t}+\alpha\left(\frac{1}{N} \sum_{n=1}^{N} x^{(n)}\left(y^{
         <tag>Python</tag>
       </tags>
   </entry>
+  <entry>
+    <title>ubuntu 安装 cudnn遇到的问题</title>
+    <url>/p/10016/</url>
+    <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">正在选中未选择的软件包 libcudnn8-dev。</span><br><span class="line">(正在读取数据库 ... 系统当前共安装有 289542 个文件和目录。)</span><br><span class="line">正准备解包 libcudnn8-dev_8.1.1.33-1+cuda10.2_amd64.deb  ...</span><br><span class="line">正在解包 libcudnn8-dev (8.1.1.33-1+cuda10.2) ...</span><br><span class="line">dpkg: 依赖关系问题使得 libcudnn8-dev 的配置工作不能继续：</span><br><span class="line"> libcudnn8-dev 依赖于 libcudnn8 (= 8.1.1.33-1+cuda10.2)；然而：</span><br><span class="line">  未安装软件包 libcudnn8。</span><br><span class="line"></span><br><span class="line">dpkg: 处理软件包 libcudnn8-dev (--install)时出错：</span><br></pre></td></tr></table></figure>
+<p>这是因为我们下载</p>
+<pre><code>cuDNN Runtime Library for Ubuntu18.04 (Deb)
+
+cuDNN Developer Library for Ubuntu18.04 (Deb)</code></pre>
+<p>这两个软件包时应该先安装上面那个Runtime版本的而不是下面那个developer版本。 所以重新开始，先卸载之前安错那个包，用代码</p>
+<p>sudo dpkg -r libcudnn8-dev</p>
+<p>卸载成功了再重新安包</p>
+<pre><code>                        sudo dpkg -i 软件包Runtime名字，</code></pre>
+<p>然后运行下面代码修复一下（可能这一步也可以不用）</p>
+<pre><code>                        sudo apt-get install -f</code></pre>
+<p>然后在安装下面那个Developer软件包</p>
+<pre><code>                        sudo dpkg -i 软件包名字</code></pre>
+<p>在这个过程中还有一个坑，就是在下载这两个包时，一定要版本一致，</p>]]></content>
+      <categories>
+        <category>软件安装</category>
+      </categories>
+      <tags>
+        <tag>ubuntu</tag>
+      </tags>
+  </entry>
 </search>

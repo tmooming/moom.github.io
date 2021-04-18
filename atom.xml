@@ -6,7 +6,7 @@
   <link href="http://www.turuwei.com/atom.xml" rel="self"/>
   
   <link href="http://www.turuwei.com/"/>
-  <updated>2021-03-10T03:15:11.373Z</updated>
+  <updated>2021-04-18T13:12:36.988Z</updated>
   <id>http://www.turuwei.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ubuntu 安装 cudnn遇到的问题</title>
+    <link href="http://www.turuwei.com/p/10016/"/>
+    <id>http://www.turuwei.com/p/10016/</id>
+    <published>2021-04-18T13:07:13.000Z</published>
+    <updated>2021-04-18T13:12:36.988Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">正在选中未选择的软件包 libcudnn8-dev。</span><br><span class="line">(正在读取数据库 ... 系统当前共安装有 289542 个文件和目录。)</span><br><span class="line">正准备解包 libcudnn8-dev_8.1.1.33-1+cuda10.2_amd64.deb  ...</span><br><span class="line">正在解包 libcudnn8-dev (8.1.1.33-1+cuda10.2) ...</span><br><span class="line">dpkg: 依赖关系问题使得 libcudnn8-dev 的配置工作不能继续：</span><br><span class="line"> libcudnn8-dev 依赖于 libcudnn8 (= 8.1.1.33-1+cuda10.2)；然而：</span><br><span class="line">  未安装软件包 libcudnn8。</span><br><span class="line"></span><br><span class="line">dpkg: 处理软件包 libcudnn8-dev (--install)时出错：</span><br></pre></td></tr></table></figure><p>这是因为我们下载</p><pre><code>cuDNN Runtime Library for Ubuntu18.04 (Deb)cuDNN Developer Library for Ubuntu18.04 (Deb)</code></pre><p>这两个软件包时应该先安装上面那个Runtime版本的而不是下面那个developer版本。 所以重新开始，先卸载之前安错那个包，用代码</p><p>sudo dpkg -r libcudnn8-dev</p><p>卸载成功了再重新安包</p><pre><code>                        sudo dpkg -i 软件包Runtime名字，</code></pre><p>然后运行下面代码修复一下（可能这一步也可以不用）</p><pre><code>                        sudo apt-get install -f</code></pre><p>然后在安装下面那个Developer软件包</p><pre><code>                        sudo dpkg -i 软件包名字</code></pre><p>在这个过程中还有一个坑，就是在下载这两个包时，一定要版本一致，</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;安装libcudnn8-dev_8.1.1.33-1+cuda10.2_amd64.deb时出现错误&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="软件安装" scheme="http://www.turuwei.com/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/"/>
+    
+    
+    <category term="ubuntu" scheme="http://www.turuwei.com/tags/ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>dict转dataframe</title>
